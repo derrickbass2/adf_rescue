@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;/* Heading Levels */
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1E3A8A; /* Primary Color */
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1E3A8A;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #1E3A8A;
+}
+
+/* Body Text */
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #334155; /* Secondary Color */
+  line-height: 1.6;
+}
+
+/* Buttons */
+button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #1E3A8A; /* Primary Button Color */
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2563EB; /* Hover State */
+}
+
+/* Links */
+a {
+  font-family: 'Inter', sans-serif;
+  color: #2563EB;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

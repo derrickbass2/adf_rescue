@@ -1,0 +1,58 @@
+.health-check-quiz {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+}
+
+.quiz-section {
+  margin-bottom: 2rem;
+}
+
+.metric-category {
+  margin-bottom: 1rem;
+}
+
+.metric-item {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.metric-item label {
+  flex: 1;
+  margin-right: 0.5rem;
+}
+
+.metric-item input {
+  width: 3rem;
+  padding: 0.3rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: red;
+  margin: 1rem 0;
+}
+
+.calculate-btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calculate-btn:hover {
+  background-color: #1e3a8a;
+}
+
+.results {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #e0f7fa;
+  border-radius: 5px;
+  border: 1px solid #81d4fa;
+}
