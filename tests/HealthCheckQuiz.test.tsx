@@ -1,7 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import HealthCheckQuiz from '../app/src/components/HealthCheckQuiz';
-import { test, expect } from '@jest/globals';
+<<<<<<< HEAD
+import HealthCheckQuiz from '/Users/dbass/Documents/GitHub/adf_rescue/app/src/components/HealthCheckQuiz.tsx'
+import * as test from "node:test";
+=======
+import HealthCheckQuiz from './HealthCheckQuiz';
+>>>>>>> 5020fce (Set up project structure and initialize key components)
 
 test('renders the quiz with all sections', () => {
   render(<HealthCheckQuiz />);

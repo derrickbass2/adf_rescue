@@ -59,6 +59,7 @@ a {
 
 a:hover {
   text-decoration: underline;
+<<<<<<< HEAD
 :root {
     --background-default: #f4f6f8;
     --card-background: #ffffff;
@@ -73,3 +74,6 @@ a:hover {
     --tooltip-background: rgba(0, 0, 0, 0.75);
     --tooltip-text: #ffffff;
 }}
+=======
+}
+>>>>>>> 5020fce (Set up project structure and initialize key components)

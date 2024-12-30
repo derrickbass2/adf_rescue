@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+<<<<<<< HEAD
     "target": "ESNext",                          // Target modern ECMAScript version for optimal support
     "module": "ESNext",                          // Utilize ES Module syntax for React and modern bundlers
     "moduleResolution": "node",                  // Resolve modules in a Node.js-like manner
@@ -53,6 +54,35 @@
 , "index.tsx"  ],
   "exclude": [
     "node_modules",                              // Exclude files in the node_modules directory
-    "dist"                                       // Exclude compiled build files
+    "dist",                                      // Exclude compiled build files
+    "**/*.test.ts",                              // Exclude TypeScript unit test files
+    "**/*.test.tsx",                             // Exclude TypeScript JSX unit test files
+    "jest.config.ts"                             // Exclude Jest configuration type file, if any
+=======
+    "target": "ES6",                             // Specify ECMAScript target version
+    "module": "commonjs",                        // Specify module code generation
+    "moduleResolution": "node",                  // Module resolution strategy
+    "strict": true,                              // Enable all strict type-checking options
+    "esModuleInterop": true,                     // Enables default importing from modules without default export
+    "skipLibCheck": true,                        // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true,    // Disallow inconsistently-cased references to files
+    "outDir": "./dist",                          // Directory where compiled files will go
+    "baseUrl": "./src",                          // Base directory for resolving non-relative module names
+    "paths": {
+      "@components/*": ["src/components/*"]      // Aliases for easier imports
+    },
+    "allowJs": true,                             // Allows JavaScript files to be included in the project
+    "resolveJsonModule": true,                   // Allows importing JSON files as modules
+    "sourceMap": true,                           // Generate corresponding '.map' files for debugging
+    "noImplicitAny": true,                       // Raise error on expressions and declarations with an implied 'any' type
+    "lib": ["dom", "es6", "es2015"]              // Specify library files for TypeScript
+  },
+  "include": [
+    "src/**/*.ts",                               // Include all TypeScript files in the src directory
+    "src/**/*.tsx"                               // Include TypeScript JSX files
+  ],
+  "exclude": [
+    "node_modules"                               // Exclude the node_modules directory
+>>>>>>> 5020fce (Set up project structure and initialize key components)
   ]
 }
