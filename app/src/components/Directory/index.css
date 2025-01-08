@@ -1,0 +1,33 @@
+/* Dashboard Container */
+.dashboard-container {
+    padding: 16px;
+    background-color: var(--background-default);
+}
+
+/* Dashboard Card */
+.dashboard-card {
+    padding: 16px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Error/Loading Messages */
+.loading-box,
+.error-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+/* Alert Panel */
+.alert-panel {
+    padding: 16px;
+    background-color: var(--alert-background);
+    border: 1px solid var(--alert-border);
+    border-radius: 4px;
+    font-size: 14px;
+}

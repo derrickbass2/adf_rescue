@@ -1,0 +1,39 @@
+/* Dashboard Container */
+.dashboard-container {
+    padding: 16px;
+    background-color: var(--background-default);
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Grid Styles */
+.dashboard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Metric Card */
+.metric-card {
+    padding: 16px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.metric-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.metric-card h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+.metric-card p {
+    margin: 8px 0 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+}

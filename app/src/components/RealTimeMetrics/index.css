@@ -1,0 +1,27 @@
+/* Real-Time Metrics */
+.real-time-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    background-color: var(--background-default);
+}
+
+/* Metric Card */
+.metric-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Chart Styling */
+.metric-chart {
+    margin-top: 16px;
+    width: 100%;
+}

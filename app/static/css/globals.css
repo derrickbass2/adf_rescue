@@ -57,4 +57,17 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
+:root {
+    --background-default: #f4f6f8;
+    --card-background: #ffffff;
+    --form-background: #ffffff;
+    --primary-color: #1976d2;
+    --primary-color-dark: #155a9e;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --border-color: #e0e0e0;
+    --alert-background: #fff3cd;
+    --alert-border: #ffeeba;
+    --tooltip-background: rgba(0, 0, 0, 0.75);
+    --tooltip-text: #ffffff;
+}}
