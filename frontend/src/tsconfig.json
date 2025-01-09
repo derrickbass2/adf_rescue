@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",                          // Target modern ECMAScript version for optimal support
     "module": "ESNext",                          // Utilize ES Module syntax for React and modern bundlers
-    "moduleResolution": "node",                 // Resolve modules in a Node.js-like manner
+    "moduleResolution": "node",                  // Resolve modules in a Node.js-like manner
     "strict": true,                              // Enable all strict type-checking options
     "jsx": "react-jsx",                          // Use React's JSX runtime (React 17+)
     "allowJs": true,                             // Allows JavaScript files to coexist in the project
@@ -23,20 +23,36 @@
     "sourceMap": true,                           // Generate `.map` files for debugging
     "lib": ["dom", "dom.iterable", "esnext"],    // Add DOM APIs and modern ECMAScript libraries
     "types": ["node", "jest"],                   // Include type definitions for Node.js and Jest
-    "allowSyntheticDefaultImports": true,       // Allow default imports even if they don’t exist in the JavaScript module
+    "allowSyntheticDefaultImports": true,        // Allow default imports even if they don’t exist in the JavaScript module
     "isolatedModules": true,                     // Require each file to be treated as a module
     "strictNullChecks": true,                    // Ensure all null and undefined values are handled
-    "useDefineForClassFields": true             // Use the `define` JavaScript class field behavior
+    "useDefineForClassFields": true              // Use the `define` JavaScript class field behavior
   },
   "include": [
     "src/**/*.ts",                               // Include all TypeScript files in the src directory
-    "src/**/*.tsx"                               // Include all TypeScript JSX files
-  ],
+    "src/**/*.tsx",                              // Include all TypeScript JSX files
+    "app/src/components/HealthCheckQuiz.tsx",    // Include HealthCheckQuiz component
+    "app/src/store/slices/alertsSlice.ts",       // Include alertsSlice
+    "app/src/store/slices/dashboardSlice.ts",    // Include dashboardSlice
+    "app/src/types/dashboard.ts",                // Include dashboard types
+    "app/src/store/index.ts",                    // Include store index
+    "app/src/services/websockets.ts",            // Include websockets service
+    "app/src/components/RealTimeChart/index.tsx",// Include RealTimeChart component
+    "app/src/services/dataCollection.ts",        // Include dataCollection service
+    "app/src/components/Process.tsx",            // Include Process component
+    "app/src/services/integration.ts",           // Include integration service
+    "app/src/services/api.ts",                   // Include API service
+    "app/src/components/Hero.tsx",               // Include Hero component
+    "app/src/components/RealTimeChart/RescueChart.tsx", // Include RescueChart component
+    "app/src/components/Directory/index.tsx",    // Include Directory component
+    "app/src/hooks/useDashboard.ts",             // Include useDashboard hook
+    "app/src/components/RealTimeMetrics/index.tsx", // Include RealTimeMetrics component
+    "app/src/hooks/useWebSocket.ts",             // Include useWebSocket hook
+    "app/src/components/DataInput/index.tsx",    // Include DataInput component
+    "app/src/components/Dashboard/index.tsx"     // Include Dashboard component
+, "index.tsx"  ],
   "exclude": [
     "node_modules",                              // Exclude files in the node_modules directory
-    "dist",                                      // Exclude compiled build files
-    "**/*.test.ts",                              // Exclude TypeScript unit test files
-    "**/*.test.tsx",                             // Exclude TypeScript JSX unit test files
-    "jest.config.ts"                             // Exclude Jest configuration type file, if any
+    "dist"                                       // Exclude compiled build files
   ]
 }

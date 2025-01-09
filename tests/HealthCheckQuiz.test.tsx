@@ -1,5 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import HealthCheckQuiz from './HealthCheckQuiz';
+import '@testing-library/jest-dom/extend-expect';
+import HealthCheckQuiz from '../app/src/components/HealthCheckQuiz';
+import { test, expect } from '@jest/globals';
 
 test('renders the quiz with all sections', () => {
   render(<HealthCheckQuiz />);

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adaptive Data Fusion (ADF) - Rescue</title>
+    
+    <!-- Link to global CSS (tailwind + custom globals) -->
+    <link
+      href="/static/css/globals.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- TailwindCSS (via CDN or build process) -->
+    <!-- Assuming Tailwind is bundled during your build process -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.10/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-background-default text-text-primary">
+    <!-- Main App Container -->
+    <div id="root"></div>
+
+    <!-- Script for React and Webpack Build -->
+    <!-- Ensure you use React's build script from your bundling tool (e.g., Webpack, Vite, etc.) -->
+    <script type="module" src="/src/index.tsx"></script>
+
+    <!-- Include WebSocket and other services -->
+    <script type="module" src="/src/services/websockets.ts"></script>
+    <script type="module" src="/src/services/api.ts"></script>
+
+    <!-- Include TailwindCSS runtime (if you're using PostCSS) -->
+    <script src="/dist/tailwind.js"></script>
+
+    <!-- Additional scripts as needed -->
+  </body>
+</html>
