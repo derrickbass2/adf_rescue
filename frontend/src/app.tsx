@@ -10,7 +10,7 @@ import HealthCheckQuiz from "./components/HealthCheckQuiz";
 import { RealTimeMetrics } from "./components/RealTimeMetrics";
 import { RealTimeChart } from "./components/RealTimeChart";
 import Directory from "./components/Directory";
-import { DataInput } from "./components/DataInput";
+import DataInput from "./components/DataInput";
 import Dashboard from "./components/Dashboard";
 
 // Import Custom Hooks
@@ -18,6 +18,7 @@ import { useWebSocket } from "./hooks/useWebSocket"; // Custom hook for WebSocke
 
 // Import Styles
 import "./globals.css"; // Global styles (tailwind, custom)
+import React from "react";
 
 function App() {
   const dispatch = useDispatch();

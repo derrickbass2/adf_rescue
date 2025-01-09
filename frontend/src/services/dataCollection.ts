@@ -1,4 +1,5 @@
-import {MetricData} from "../../../../../../PycharmProjects/adapt-ai-real/src/types/dashboard";
+import { MetricData } from "/Users/dbass/Documents/GitHub/adf_rescue/frontend/src/types/dashboard";
+import { UsageDataCollector, AdoptionDataCollector, ResistanceDataCollector, SuccessDataCollector, DataCollector } from "/Users/dbass/Documents/GitHub/adf_rescue/frontend/src/collectors";
 
 export class DataCollectionService {
     private static instance: DataCollectionService;

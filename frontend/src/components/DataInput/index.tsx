@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Grid, TextField, Button, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { dashboardService } from "../../../../../../../PycharmProjects/adapt-ai-real/src/services/api";
+import { dashboardService } from "/Users/dbass/Documents/GitHub/adf_rescue/frontend/src/services/api";
 
 // Define props for the DataInputForm component
 interface DataInputFormProps {
