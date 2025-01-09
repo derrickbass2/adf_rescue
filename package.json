@@ -1,13 +1,46 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "@types/react-redux": "^7.1.34",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.1",
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
+=======
+<<<<<<< HEAD
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.3.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^13.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "yarn": "^1.22.0"
+  },
+  "keywords": [],
+  "author": "Derrick Bass",
+  "license": "Apache-2.0"
+=======
+    "@types/react-redux": "^7.1.34",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.1.1",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+>>>>>>> 79a68a5 (Add initial project files, including backend models, frontend components, and configuration)
     "@types/jest": "^29.5.14",
     "@types/node": "^22.10.5",
     "@types/react-router-dom": "^5.3.3"
   }
+<<<<<<< HEAD
+=======
+>>>>>>> 6e84c45 (Add initial project files, including backend models, frontend components, and configuration)
+>>>>>>> 79a68a5 (Add initial project files, including backend models, frontend components, and configuration)
 }

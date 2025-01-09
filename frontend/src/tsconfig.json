@@ -55,6 +55,7 @@
 , "index.tsx"  ],
   "exclude": [
     "node_modules",                              // Exclude files in the node_modules directory
+<<<<<<< HEAD:tsconfig.json
     "dist",                                      // Exclude compiled build files
     "**/*.test.ts",                              // Exclude TypeScript unit test files
     "**/*.test.tsx",                             // Exclude TypeScript JSX unit test files
@@ -108,5 +109,8 @@
     "**/*.test.tsx",                             // Exclude TypeScript JSX unit test files
     "jest.config.ts"                             // Exclude Jest configuration type file, if any
 >>>>>>> 097026d (Set up project structure and initialize key components)
+=======
+    "dist"                                       // Exclude compiled build files
+>>>>>>> 6e84c45 (Add initial project files, including backend models, frontend components, and configuration):frontend/src/tsconfig.json
   ]
 }
