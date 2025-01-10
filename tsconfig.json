@@ -1,0 +1,62 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "strict": true,
+      "jsx": "react-jsx",
+      "allowJs": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "skipLibCheck": true,
+      "resolveJsonModule": true,
+      "noImplicitAny": true,
+      "noImplicitThis": true,
+      "noUnusedParameters": true,
+      "noUnusedLocals": true,
+      "baseUrl": "./",
+      "paths": {
+        "@components/*": ["src/components/*"],
+        "@utils/*": ["src/utils/*"]
+      },
+      "outDir": "./dist",
+      "sourceMap": true,
+      "lib": ["dom", "dom.iterable", "esnext"],
+      "types": ["node", "jest"],
+      "allowSyntheticDefaultImports": true,
+      "isolatedModules": true,
+      "strictNullChecks": true,
+      "useDefineForClassFields": true
+    },
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "app/src/components/HealthCheckQuiz.tsx",
+      "app/src/store/slices/alertsSlice.ts",
+      "app/src/store/slices/dashboardSlice.ts",
+      "app/src/types/dashboard.ts",
+      "app/src/store/index.ts",
+      "app/src/services/websockets.ts",
+      "app/src/components/RealTimeChart/index.tsx",
+      "app/src/services/dataCollection.ts",
+      "app/src/components/Process.tsx",
+      "app/src/services/integration.ts",
+      "app/src/services/api.ts",
+      "app/src/components/Hero.tsx",
+      "app/src/components/RealTimeChart/RescueChart.tsx",
+      "app/src/components/Directory/index.tsx",
+      "app/src/hooks/useDashboard.ts",
+      "app/src/components/RealTimeMetrics/index.tsx",
+      "app/src/hooks/useWebSocket.ts",
+      "app/src/components/DataInput/index.tsx",
+      "app/src/components/Dashboard/index.tsx",
+      "index.tsx"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist",
+      "**/*.test.ts",
+      "**/*.test.tsx",
+      "jest.config.ts"
+    ]
+  }
