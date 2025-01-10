@@ -31,6 +31,7 @@ body {
   font-weight: 400;
   color: #334155; /* Secondary Color */
   line-height: 1.6;
+  background-color: var(--background-default); /* Ensures consistent background */
 }
 
 /* Buttons */
@@ -43,6 +44,7 @@ button {
   border-radius: 8px;
   padding: 10px 20px;
   border: none;
+  cursor: pointer; /* Adds a pointer cursor to indicate interactivity */
   transition: background-color 0.3s ease;
 }
 
@@ -55,14 +57,60 @@ a {
   font-family: 'Inter', sans-serif;
   color: #2563EB;
   text-decoration: none;
+  transition: color 0.3s ease; /* Adds smooth color transition for hover effect */
 }
 
 a:hover {
   text-decoration: underline;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 097026d (Set up project structure and initialize key components)
+  color: #1E40AF; /* Darker hover state for accessibility */
+}
+
+/* Form Elements */
+input, select, textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--form-background);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #2563EB; /* Focus border color */
+  background-color: #f1f5f9; /* Focus background color */
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  background-color: var(--tooltip-background);
+  color: var(--tooltip-text);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the tooltip element */
+  left: 50%;
+  margin-left: -60px; /* Adjust to center the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Root Variables */
 :root {
     --background-default: #f4f6f8;
     --card-background: #ffffff;
@@ -76,11 +124,4 @@ a:hover {
     --alert-border: #ffeeba;
     --tooltip-background: rgba(0, 0, 0, 0.75);
     --tooltip-text: #ffffff;
-<<<<<<< HEAD
-}}
-=======
 }
->>>>>>> 5020fce (Set up project structure and initialize key components)
-=======
-}}
->>>>>>> 097026d (Set up project structure and initialize key components)

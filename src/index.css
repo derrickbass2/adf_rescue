@@ -1,0 +1,84 @@
+/* globals.css (or index.css) */
+
+/* Include the Tailwind base styles */
+@tailwind base;
+
+/* Include the Tailwind component styles */
+@tailwind components;
+
+/* Include the Tailwind utility styles */
+@tailwind utilities;
+
+/* Your custom styles come after Tailwind's directives */
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1E3A8A; /* Primary Color */
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1E3A8A;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #1E3A8A;
+}
+
+/* Body Text */
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #334155; /* Secondary Color */
+  line-height: 1.6;
+}
+
+/* Buttons */
+button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #1E3A8A; /* Primary Button Color */
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2563EB; /* Hover State */
+}
+
+/* Links */
+a {
+  font-family: 'Inter', sans-serif;
+  color: #2563EB;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+:root {
+  --background-default: #f4f6f8;
+  --card-background: #ffffff;
+  --form-background: #ffffff;
+  --primary-color: #1976d2;
+  --primary-color-dark: #155a9e;
+  --text-primary: #212121;
+  --text-secondary: #757575;
+  --border-color: #e0e0e0;
+  --alert-background: #fff3cd;
+  --alert-border: #ffeeba;
+  --tooltip-background: rgba(0, 0, 0, 0.75);
+  --tooltip-text: #ffffff;
+}

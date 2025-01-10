@@ -1,0 +1,23 @@
+.usage-data-collector,
+.adoption-data-collector,
+.resistance-data-collector,
+.success-data-collector,
+.data-collector {
+  padding: 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
