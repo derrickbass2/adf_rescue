@@ -39,3 +39,27 @@ export class DataCollector {
         value: number;
         timestamp: number;
     }
+    export interface MetricData {
+    
+      lastUpdated: string;
+    
+      organizationName: string; // Add this line
+    
+      usageAnalytics: any;
+    
+      adoptionRates: any;
+    
+      resistanceMetrics: any;
+    
+      successMetrics: any;
+    
+      thresholds: any;
+    
+      alerts: any;
+    
+      departments: any;
+    
+      detailedMetrics: any;
+    
+    }
+    

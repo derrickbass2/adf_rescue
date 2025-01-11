@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './app';
-import './globals.css'; // Import Tailwind CSS and global styles
+import '/Users/dbass/Documents/GitHub/adf_rescue/src/index'; // Import Tailwind CSS and global styles
 import { ProgressProvider } from "./context/ProgressContext";
 import Dashboard from "./components/Dashboard";
-import './globals.css';  // Ensure this line is in your entry file
+import '/Users/dbass/Documents/GitHub/adf_rescue/src/index';  // Ensure this line is in your entry file
 const MainApp: React.FC = () => {
   return (
     <ProgressProvider>

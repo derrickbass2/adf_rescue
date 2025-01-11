@@ -9,6 +9,6 @@ const Hero = () => (
       <button className="cta-btn">Learn More</button>
     </div>
   </section>
-);
+)
 
 export default Hero;
