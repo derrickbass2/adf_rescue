@@ -1,0 +1,49 @@
+.process {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .process h2 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 1.5rem;
+  }
+  
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .step {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .step.active {
+    background-color: #1e3a8a;
+    color: white;
+  }
+  
+  .step h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .step p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    color: #666;
+  }
