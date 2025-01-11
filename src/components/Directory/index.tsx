@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Box, CircularProgress, Grid, Paper, ThemeProvider, Typography } from '@mui/material';
 import { styled } from '@mui/system';
-import { theme } from '../../styles/theme'; // Update the path to the correct location of the theme module
-import { AdoptionRates, ResistanceIndicators, SuccessMetrics, UsageMetrics } from '../DashboardComponents/index';
-import DashboardHeader from '../Hero';
-// import { MetricsGrid } from '../RealTimeMetrics'; // Removed as it is not exported from the module
-import { AlertsPanel } from '../AlertsPanel';
-import { useDataFetching } from '../../hooks/useDataFetching'; // Ensure this path is correct or update it to the correct location
-import { MetricData } from '../../types';
+import SuccessMetrics from '../Dashboard/SuccessMetrics';
+import { useDataFetching } from '../../hooks/useDataFetching'; // Ensure this path is correct
+import theme from '/Users/dbass/Documents/GitHub/adf_rescue/src/theme'; // Ensure that the theme file exists at this path or update the path accordingly
+import AlertsPanel from '../AlertsPanel';
 
 interface DashboardProps {
   organizationId: string;
   timeRange: string;
   filters: Record<string, any>;
 }
-// import { Directory } from '.';
 
 const DashboardContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(3),
@@ -33,15 +29,11 @@ export const Dashboard: React.FC<DashboardProps> = ({
   timeRange,
   filters,
 }) => {
-  const [metrics, setMetrics] = useState<MetricData | null>(null);
+  const [metrics, setMetrics] = useState<any | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const {
-    data,
-    // isLoading, // Remove unused variable
-    error: fetchError,
-  } = useDataFetching(`/api/organizations/${organizationId}/metrics`, {
+  const { data, error: fetchError } = useDataFetching(`/api/organizations/${organizationId}/metrics`, {
     timeRange,
     filters,
   });
@@ -52,7 +44,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
       setLoading(false);
     }
     if (fetchError) {
-      setError(fetchError.message);
+      setError(fetchError);
       setLoading(false);
     }
   }, [data, fetchError]);
@@ -76,76 +68,25 @@ export const Dashboard: React.FC<DashboardProps> = ({
   return (
     <ThemeProvider theme={theme}>
       <DashboardContainer>
-        <DashboardHeader
-          organizationName={metrics?.organizationName}
-          lastUpdated={metrics?.lastUpdated}
-        />
-
         <Grid container spacing={3}>
-          {/* Usage Analytics */}
-          <Grid item xs={12} md={6} lg={3}>
-            <DashboardCard>
-              <UsageMetrics
-                data={metrics?.usageAnalytics}
-                timeRange={timeRange}
-              />
-            </DashboardCard>
-          </Grid>
-
-          {/* Adoption Rates */}
-          <Grid item xs={12} md={6} lg={3}>
-            <DashboardCard>
-              <AdoptionRates
-                data={metrics?.adoptionRates}
-                departments={metrics?.departments}
-              />
-            </DashboardCard>
-          </Grid>
-
-          {/* Resistance Indicators */}
-          <Grid item xs={12} md={6} lg={3}>
-            <DashboardCard>
-              <ResistanceIndicators
-                data={metrics?.resistanceMetrics}
-                threshold={metrics?.thresholds}
-              />
-            </DashboardCard>
-          </Grid>
-
           {/* Success Metrics */}
           <Grid item xs={12} md={6} lg={3}>
             <DashboardCard>
-              <SuccessMetrics
-                data={metrics?.successMetrics}
-              />
+              <SuccessMetrics data={metrics?.successMetrics || []} />
             </DashboardCard>
           </Grid>
 
-          {/* Alerts and Notifications */}
+          {/* Alerts Panel */}
           <Grid item xs={12}>
             <AlertsPanel
-              alerts={metrics?.alerts}
-              onAlertAction={() => {}} // Define a placeholder function
+              alerts={metrics?.alerts || []}
+              onAlertAction={(id) => console.log(`Action triggered for alert ID: ${id}`)}
             />
           </Grid>
-
-          {/* Detailed Metrics Grid */}
-          {/* <Grid item xs={12}>
-            <MetricsGrid
-              data={metrics?.detailedMetrics}
-              onMetricClick={() => {}} // Define a placeholder function
-            />
-          </Grid> */}
-
-          {/* Directory Component */}
-          {/* <Grid item xs={12}>
-            <Directory />
-          </Grid> */}
         </Grid>
       </DashboardContainer>
     </ThemeProvider>
   );
 };
 
-// export { Directory }; // Removed to fix circular definition
-
+export default Dashboard;

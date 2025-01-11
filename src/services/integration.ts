@@ -5,7 +5,7 @@ export class Integration {
         this.name = name;
     }
 
-    public async sync(organizationId: string): Promise<void> {
+    public async sync(_organizationId: string): Promise<void> {
         // Implementation here
     }
 }
