@@ -6,8 +6,9 @@ import Dashboard from "./components/Dashboard";
 import Login from "./auth/Login";
 import SignUpForm from "./auth/SignUpForm";
 import ProtectedRoute from "./auth/ProtectedRoute";
-import './globals.css';  // Ensure this line is in your entry file
-// Ensure 'DashboardState' aligns with your Redux slice definition
+import Home from "./components/Home"; // Import the new Home component
+import './globals.css';
+
 interface DashboardState {
   metrics: any[];
   timeRange: string;
@@ -20,20 +21,18 @@ interface DashboardState {
 const App: React.FC = () => {
   const dispatch = useDispatch();
 
-  // Mock dashboard state for dispatching
-  const dashboardState: DashboardState = {
-    metrics: [],
-    timeRange: "lastWeek",
-    filters: {},
-    realTimeData: null,
-    organizationId: "org-123",
-    additionalData: "Some additional info",
-  };
-
   useEffect(() => {
-    // Dispatch initial state to Redux store
+    const dashboardState: DashboardState = {
+      metrics: [],
+      timeRange: "lastWeek",
+      filters: {},
+      realTimeData: null,
+      organizationId: "org-123",
+      additionalData: "Some additional info",
+    };
+
     dispatch({
-      type: "dashboard/setState", // Replace with actual action type in your slice
+      type: "dashboard/setState",
       payload: dashboardState,
     });
   }, [dispatch]);
@@ -42,6 +41,7 @@ const App: React.FC = () => {
     <Provider store={store}>
       <Router>
         <Routes>
+          <Route path="/" element={<Home />} /> {/* Add Home page route */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
