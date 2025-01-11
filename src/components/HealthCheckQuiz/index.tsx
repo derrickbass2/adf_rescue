@@ -1,24 +1,17 @@
 import React, { useState } from 'react';
 import './healthCheckQuiz.css'; // Ensure the CSS file is properly included
-import { sectionsConfig } from './sectionsConfig'; // Ensure sectionsConfig matches its expected structure
+import sectionsConfig from '../sectionsConfig'; // Correct relative path
 
-// Define the shape of the `sectionsConfig` for static typing
 interface SectionConfig {
-  title: string; // Section title
-  metrics: string[]; // Array of metric category names
+  title: string;
+  metrics: string[];
 }
 
 // This ensures `sectionsConfig` is an array of `SectionConfig` objects
 const HealthCheckQuiz: React.FC = () => {
-  // Validate that `sectionsConfig` exists and is properly formatted
-  if (!sectionsConfig || !Array.isArray(sectionsConfig)) {
-    console.error('Error: sectionsConfig is missing or improperly formatted.');
-    return <div>Error loading quiz configuration.</div>;
-  }
-
   // Calculate the total number of metrics and their maximum score
   const totalMetrics = sectionsConfig.reduce(
-    (sum, section) => sum + section.metrics.length * 5,
+    (sum: number, section: SectionConfig) => sum + section.metrics.length * 5,
     0
   );
 
@@ -27,6 +20,12 @@ const HealthCheckQuiz: React.FC = () => {
   const [totalScore, setTotalScore] = useState<number | null>(null); // Total score tracker
   const [recommendation, setRecommendation] = useState<string | null>(null); // Recommendation text
   const [error, setError] = useState<string | null>(null); // Error message for validation
+
+  // Validate that `sectionsConfig` exists and is properly formatted
+  if (!sectionsConfig || !Array.isArray(sectionsConfig)) {
+    console.error('Error: sectionsConfig is missing or improperly formatted.');
+    return <div>Error loading quiz configuration.</div>;
+  }
 
   /**
    * Handles changes to score inputs

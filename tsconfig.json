@@ -35,27 +35,7 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx",
-    "app/src/components/HealthCheckQuiz.tsx",
-    "app/src/store/slices/alertsSlice.ts",
-    "app/src/store/slices/dashboardSlice.ts",
-    "app/src/types/dashboard.ts",
-    "app/src/store/index.ts",
-    "app/src/services/websockets.ts",
-    "app/src/components/RealTimeChart/index.tsx",
-    "app/src/services/dataCollection.ts",
-    "app/src/components/Process.tsx",
-    "app/src/services/integration.ts",
-    "app/src/services/api.ts",
-    "app/src/components/Hero.tsx",
-    "app/src/components/RealTimeChart/RescueChart.tsx",
-    "app/src/components/Directory/index.tsx",
-    "app/src/hooks/useDashboard.ts",
-    "app/src/components/RealTimeMetrics/index.tsx",
-    "app/src/hooks/useWebSocket.ts",
-    "app/src/components/DataInput/index.tsx",
-    "app/src/components/Dashboard/index.tsx",
-    "index.tsx"
+    "src/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

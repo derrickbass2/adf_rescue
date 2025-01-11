@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Box, CircularProgress, Grid, Paper, ThemeProvider, Typography } from '@mui/material';
 import { styled } from '@mui/system';
-import { theme } from '../../theme'; // Update the path to the correct location of the theme module
-import { AdoptionRates, ResistanceIndicators, SuccessMetrics, UsageMetrics } from '../DashboardComponents';
-import { DashboardHeader } from '../Hero';
-import { MetricsGrid } from '../RealTimeMetrics';
+import { theme } from '../../styles/theme'; // Update the path to the correct location of the theme module
+import { AdoptionRates, ResistanceIndicators, SuccessMetrics, UsageMetrics } from '../DashboardComponents/index';
+import DashboardHeader from '../Hero';
+// import { MetricsGrid } from '../RealTimeMetrics'; // Removed as it is not exported from the module
 import { AlertsPanel } from '../AlertsPanel';
-import { useDataFetching } from '../../hooks/useDataFetching';
-import { DashboardProps, MetricData } from '../../types';
-import { Directory } from '.';
+import { useDataFetching } from '../../hooks/useDataFetching'; // Ensure this path is correct or update it to the correct location
+import { MetricData } from '../../types';
+
+interface DashboardProps {
+  organizationId: string;
+  timeRange: string;
+  filters: Record<string, any>;
+}
+// import { Directory } from '.';
 
 const DashboardContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(3),
@@ -111,7 +117,6 @@ export const Dashboard: React.FC<DashboardProps> = ({
             <DashboardCard>
               <SuccessMetrics
                 data={metrics?.successMetrics}
-                targets={metrics?.targets}
               />
             </DashboardCard>
           </Grid>
@@ -125,22 +130,22 @@ export const Dashboard: React.FC<DashboardProps> = ({
           </Grid>
 
           {/* Detailed Metrics Grid */}
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <MetricsGrid
               data={metrics?.detailedMetrics}
               onMetricClick={() => {}} // Define a placeholder function
             />
-          </Grid>
+          </Grid> */}
 
           {/* Directory Component */}
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <Directory />
-          </Grid>
+          </Grid> */}
         </Grid>
       </DashboardContainer>
     </ThemeProvider>
   );
 };
 
-export { Directory };
+// export { Directory }; // Removed to fix circular definition
 

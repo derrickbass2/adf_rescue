@@ -1,18 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './index.css';
 
-// Assuming DataCollector is a class
-class DataCollectorClass {
-  // class implementation
-}
 
-// Use typeof to refer to the type of the class constructor
-function createCollector(collectorClass: typeof DataCollectorClass): DataCollectorClass {
-  return new collectorClass();
-}
 
-// Example usage
-const myCollector = createCollector(DataCollectorClass);
 
 interface DataCollectorProps {
   title: string;
@@ -46,8 +36,8 @@ interface DataCollectorInterface {
 
 // Correcting class names and their implementation
 export class UsageDataCollector implements DataCollectorInterface {
-  collect(organizationId: string): Promise<void> {
-    return new Promise((resolve, reject) => {
+  collect(): Promise<void> {
+    return new Promise((resolve) => {
       // Implementation here
       resolve(undefined);
     });
@@ -55,8 +45,8 @@ export class UsageDataCollector implements DataCollectorInterface {
 }
 
 export class AdoptionDataCollector implements DataCollectorInterface {
-  collect(organizationId: string): Promise<any> {
-    return new Promise((resolve, reject) => {
+  collect(): Promise<any> {
+    return new Promise((resolve) => {
       // Implementation here
       resolve(undefined);
     });
@@ -64,8 +54,8 @@ export class AdoptionDataCollector implements DataCollectorInterface {
 }
 
 export class ResistanceDataCollector implements DataCollectorInterface {
-  collect(organizationId: string): Promise<any> {
-    return new Promise((resolve, reject) => {
+  collect(): Promise<any> {
+    return new Promise((resolve) => {
       // Implementation here
       resolve(undefined);
     });
@@ -73,8 +63,8 @@ export class ResistanceDataCollector implements DataCollectorInterface {
 }
 
 export class SuccessDataCollector implements DataCollectorInterface {
-  collect(organizationId: string): Promise<any> {
-    return new Promise((resolve, reject) => {
+  collect(): Promise<any> {
+    return new Promise((resolve) => {
       // Implementation here
       resolve(undefined);
     });
