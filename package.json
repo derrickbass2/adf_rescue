@@ -15,12 +15,15 @@
     "axios": "^1.7.9",
     "chart.js": "^4.4.7",
     "firebase": "^11.1.0",
+    "nth-check": "^2.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.1",
-    "react-scripts": "^5.0.1",
-    "recharts": "^2.15.0"
+    "react-scripts": "^4.0.3",
+    "recharts": "^2.15.0",
+    "resolve-url-loader": "^5.0.0",
+    "svgo": "^3.3.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
