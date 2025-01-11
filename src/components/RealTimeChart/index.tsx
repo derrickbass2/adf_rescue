@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { MetricData } from '../../types/dashboard';
 
 interface LocalMetricData {
     timestamp: string;

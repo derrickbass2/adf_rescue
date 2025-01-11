@@ -55,7 +55,7 @@ export const RealTimeMetricCard: React.FC<MetricCardProps & RealTimeDataProps> =
     }, 1000); // Poll every second
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, [fetchData]);
+  }, [fetchData, title]);
 
   return <MetricCard title={title} value={data.value} unit={data.unit} />;
 };

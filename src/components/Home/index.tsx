@@ -1,6 +1,6 @@
 import React from "react";
-import Hero from "./Hero";
-import Process from "./Process";
+import Hero from "../Hero";
+import Process from "../Process";
 
 const Home: React.FC = () => (
   <div>

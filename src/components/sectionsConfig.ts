@@ -1,5 +1,6 @@
 // sectionsConfig.ts
-export const sectionsConfig = [
+// Configuration for different sections and their associated metrics
+const sectionsConfig = [
   {
     title: 'Section 1',
     metrics: ['Metric 1', 'Metric 2', 'Metric 3']
@@ -9,3 +10,5 @@ export const sectionsConfig = [
     metrics: ['Metric 4', 'Metric 5', 'Metric 6']
   }
 ];
+
+export default sectionsConfig;

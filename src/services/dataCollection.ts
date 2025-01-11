@@ -1,18 +1,15 @@
 import { MetricData } from "../types/dashboard";
-import { UsageDataCollector, AdoptionDataCollector, ResistanceDataCollector, SuccessDataCollector, type DataCollector as DataCollectorType } from "../components/Collectors";
+import { UsageDataCollector, AdoptionDataCollector, ResistanceDataCollector, SuccessDataCollector } from "../components/Collectors";
 
 // Assuming DataCollectorClass is a class
 class DataCollectorClass {
   collect(organizationId: string): Promise<any> {
-    // method implementation
+    // Use the organizationId parameter
+    console.log(`Collecting data for organization: ${organizationId}`);
     return Promise.resolve({});
   }
 }
   
-  // Using typeof DataCollectorType to refer to its type
-  function createCollector(collectorClass: typeof DataCollectorClass): DataCollectorClass {
-    return new collectorClass();
-  }
   
   // Example usage
 export const fetchData = async (organizationId: string): Promise<MetricData> => {
@@ -39,6 +36,7 @@ export class DataCollectionService {
   public async collectData(organizationId: string): Promise<MetricData> {
     const metrics: Partial<MetricData> = {};
 
+    console.log(`Collecting data for organization: ${organizationId}`);
     this.collectors.set("usage", new UsageDataCollector());
     this.collectors.set("adoption", new AdoptionDataCollector());
     this.collectors.set("resistance", new ResistanceDataCollector());
