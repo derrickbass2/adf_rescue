@@ -17,11 +17,4 @@ python-dotenv = "^1.0.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-<<<<<<< HEAD
 package-mode = false 
-=======
-<<<<<<< HEAD
-=======
-package-mode = false 
->>>>>>> 6e84c45 (Add initial project files, including backend models, frontend components, and configuration)
->>>>>>> 79a68a5 (Add initial project files, including backend models, frontend components, and configuration)
