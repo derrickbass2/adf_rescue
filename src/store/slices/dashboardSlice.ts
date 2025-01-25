@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { MetricData } from '../../types/dashboard';
+import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {MetricData} from '../../types/dashboard';
 
 // Define the fetchMetrics async thunk here
 export const fetchMetricsThunk = createAsyncThunk<MetricData, void, { rejectValue: string }>(
@@ -8,8 +8,7 @@ export const fetchMetricsThunk = createAsyncThunk<MetricData, void, { rejectValu
         try {
             // Replace with actual API call
             const response = await fetch('/api/metrics');
-            const data = await response.json();
-            return data;
+          return await response.json();
         } catch (error) {
             if (error instanceof Error) {
                 return rejectWithValue(error.message);
@@ -33,7 +32,7 @@ interface DashboardState {
 }
 
 const initialState: DashboardState = {
-  organizationId: '',
+  organizationId: 'store-1', // Default organization ID for the dashboard slice
   additionalData: '',
   metrics: null,
   timeRange: 'last_7_days', // Default time range
@@ -88,28 +87,7 @@ const dashboardSlice = createSlice({
         }
       });
     },
-    
-    // Action to add a data point to real-time metrics
-    addMetricDataPoint: (
-      state,
-      action: PayloadAction<{
-        path: string[];
-        value: any;
-        timestamp: number;
-      }>
-    ) => {
-      const { path, value, timestamp } = action.payload;
-      const key = path.join('.');
-      if (!state.realTimeData[key]) {
-        state.realTimeData[key] = [];
-      }
-      state.realTimeData[key].push({ value, timestamp });
-
-      // Keep only the last 100 data points
-      if (state.realTimeData[key].length > 100) {
-        state.realTimeData[key].shift();
-      }
-    },
+// Action to add a data point to real-time metrics
   },
   // Define extra reducers for async actions (like fetchMetrics)
   extraReducers: (builder) => {
@@ -135,7 +113,6 @@ export const {
   setFilters,
   updateMetricValue,
   updateRealTimeMetrics,
-  addMetricDataPoint,
 } = dashboardSlice.actions;
 
 // Export the reducer to be used in the store

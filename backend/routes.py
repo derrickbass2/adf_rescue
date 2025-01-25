@@ -10,7 +10,7 @@ api_routes = Blueprint('api_routes', __name__)
 def home():
     return "Welcome to the homepage"
 
-cred = credentials.Certificate("path/to/your-service-account.json")
+cred = credentials.Certificate("/Users/dbass/Documents/GitHub/adf_rescue/backend/config/firebase-credentials.json")
 firebase_admin.initialize_app(cred)
 
 app = Flask(__name__)
@@ -27,19 +27,3 @@ def validate_token():
 if __name__ == "__main__":
     app.run(debug=True)
 
-cred = credentials.Certificate("path/to/your-service-account.json")
-firebase_admin.initialize_app(cred)
-
-app = Flask(__name__)
-
-@app.route('/validate-token', methods=['POST'])
-def validate_token():
-    token = request.json.get('token')
-    try:
-        decoded_token = auth.verify_id_token(token)
-        return jsonify({"uid": decoded_token["uid"], "role": decoded_token.get("role", "user")}), 200
-    except Exception as e:
-        return jsonify({"error": str(e)}), 401
-
-if __name__ == "__main__":
-    app.run(debug=True)

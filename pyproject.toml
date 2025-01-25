@@ -1,20 +1,21 @@
 [tool.poetry]
 name = "adf-rescue"
 version = "0.1.0"
-description = "A modular framework for assessing, diagnosing, and improving AI implementation health within organizations. Includes tools for organizational readiness evaluation, adoption metrics analysis, and strategic intervention recommendations."
+description = "A modular framework for assessing, diagnosing, and improving AI implementation health within organizations."
 authors = ["Derrick Bass <derrick@adaptivedatafusion.com>"]
 license = "Apache 2.0"
-readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
 flask = "^3.1.0"
 flask-cors = "^5.0.0"
-alembic = "^1.14.0"
+flask-sqlalchemy = "^3.1.1"
+flask-migrate = "^4.0.5"
+flask-socketio = "^5.3.6"
+psycopg2-binary = "^2.9.9"
 python-dotenv = "^1.0.1"
-
+firebase-admin = "^6.4.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-package-mode = false 

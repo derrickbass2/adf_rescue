@@ -5,8 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99075580-2b07-4194-a6ff-320ddf6fab76" name="Changes" comment="Set up project structure and initialize key components&#10;&#10;This commit establishes the foundational structure for the Adaptive Data Fusion project. It includes TypeScript and Flask configurations, initial backend models and routes, React frontend components, global styling, and test setup. IntelliJ project files and other development environment configurations are also included for streamlined collaboration.">
-      <change afterPath="$PROJECT_DIR$/app/src/components/sectionsConfig.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/HealthCheckQuiz.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/HealthCheckQuiz.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/errors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/extensions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/websocket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/init.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/useAppDispatch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useDashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useDashboard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/alertsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/alertsSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/dashboardSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/dashboardSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/integrationSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/integrationSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/userSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/userSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/HealthCheckQuiz.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/tests/HealthCheckQuiz.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
@@ -36,6 +63,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;derrickbass2&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/derrickbass2/adf_rescue.git&quot;,
+    &quot;accountId&quot;: &quot;191d8539-d6b0-4c33-8816-bfbe2abf7f00&quot;
+  }
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -43,44 +82,40 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2quzWxXYazIQ3lQ0F5M600SJAAW" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "javascript.nodejs.core.library.configured.version": "22.12.0",
-    "javascript.nodejs.core.library.typings.version": "22.10.2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "ts.external.directory.path": "/Users/dbass/Documents/GitHub/adf_rescue/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;22.12.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;22.10.2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/dbass/Documents/GitHub/adf_rescue/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/backend" />
       <recent name="$PROJECT_DIR$/app/src/components" />
     </key>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
-        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,6 +129,11 @@
       <workItem from="1736356474073" duration="1113000" />
       <workItem from="1736389499496" duration="284000" />
       <workItem from="1736389790136" duration="4657000" />
+      <workItem from="1737603487956" duration="2686000" />
+      <workItem from="1737609538548" duration="3962000" />
+      <workItem from="1737783161883" duration="90000" />
+      <workItem from="1737783257519" duration="11587000" />
+      <workItem from="1737801546197" duration="53000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure and initialize key components&#10;&#10;This commit establishes the foundational structure for the Adaptive Data Fusion project. It includes TypeScript and Flask configurations, initial backend models and routes, React frontend components, global styling, and test setup. IntelliJ project files and other development environment configurations are also included for streamlined collaboration.">
       <option name="closed" value="true" />
@@ -120,5 +160,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Set up project structure and initialize key components&#10;&#10;This commit establishes the foundational structure for the Adaptive Data Fusion project. It includes TypeScript and Flask configurations, initial backend models and routes, React frontend components, global styling, and test setup. IntelliJ project files and other development environment configurations are also included for streamlined collaboration." />
     <option name="LAST_COMMIT_MESSAGE" value="Set up project structure and initialize key components&#10;&#10;This commit establishes the foundational structure for the Adaptive Data Fusion project. It includes TypeScript and Flask configurations, initial backend models and routes, React frontend components, global styling, and test setup. IntelliJ project files and other development environment configurations are also included for streamlined collaboration." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Collectors/index.tsx</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,10 +1,6 @@
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { toBeInTheDocument } from '@testing-library/jest-dom/matchers';
-expect.extend({ toBeInTheDocument });
-import HealthCheckQuiz from '../app/src/components/HealthCheckQuiz';
-import { test, expect } from '@jest/globals';
+import HealthCheckQuiz from "../src/components/HealthCheckQuiz";
 
 test('renders the quiz with all sections', () => {
   render(<HealthCheckQuiz />);
@@ -18,7 +14,6 @@ test('calculates the correct score and recommendation', () => {
 
   const calculateButton = screen.getByText(/Calculate Results/i);
   fireEvent.click(calculateButton);
-
   expect(screen.getByText(/Total Score:/i)).toBeInTheDocument();
   expect(screen.getByText(/Recommendation:/i)).toBeInTheDocument();
 });

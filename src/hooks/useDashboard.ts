@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../store';
+import { useAppSelector } from '../store';
 import { fetchMetricsThunk, setFilters, setTimeRange } from '../store/slices/dashboardSlice';
+import {useAppDispatch} from "../store/useAppDispatch";
 
 export const useDashboard = () => {
   const dispatch = useAppDispatch();
