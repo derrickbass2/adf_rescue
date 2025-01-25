@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import '/Users/dbass/Documents/GitHub/adf_rescue/src/index'; // Import Tailwind CSS and global styles
-import { ProgressProvider } from "./context/ProgressContext";
-import Dashboard from "./components/Dashboard";
-import '/Users/dbass/Documents/GitHub/adf_rescue/src/index';  // Ensure this line is in your entry file
-const MainApp: React.FC = () => {
-  return (
-    <ProgressProvider>
-      <Dashboard />
-    </ProgressProvider>
-  );
-};
+import { Provider } from 'react-redux';
+import { AuthProvider } from './auth/AuthProvider';
+import App from './app';
+import './index.css';
+import {store} from "./store"
 
-// Mount the React app to the root div in public/index.html
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+
 root.render(
   <React.StrictMode>
-    <MainApp />
+    <Provider store={store}>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </Provider>
   </React.StrictMode>
 );

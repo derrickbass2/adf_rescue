@@ -17,7 +17,7 @@ const initialState: AlertState = {
 export const fetchAlerts = createAsyncThunk(
     'alerts/fetchAlerts',
 async (_, { rejectWithValue }: { rejectWithValue: (value: string) => void }) => {        try {
-            const response: Alert[] = await dashboardService.getAlerts();
+            const response: Alert[] = dashboardService.getAlerts();
             return response;
         } catch (error) {
             return rejectWithValue((error as FetchAlertsError)?.message || 'Failed to fetch alerts');
@@ -33,17 +33,6 @@ const alertsSlice = createSlice({
             state.alerts.unshift(action.payload);
             state.unreadCount += 1;
         },
-        markAlertAsRead: (state: AlertState, action: PayloadAction<string>) => {
-            const alert = state.alerts.find((a: Alert) => a.id === action.payload);
-            if (alert && !alert.read) {
-                alert.read = true;
-                state.unreadCount -= 1;
-            }
-        },
-        clearAlerts: (state: AlertState) => {
-            state.alerts = [];
-            state.unreadCount = 0;
-        },
     },
     extraReducers: (builder) => {
 builder.addCase(fetchAlerts.fulfilled, (state: AlertState, action: PayloadAction<void | Alert[]>) => {
@@ -55,5 +44,4 @@ builder.addCase(fetchAlerts.fulfilled, (state: AlertState, action: PayloadAction
     },
 });
 
-export const { addAlert, markAlertAsRead, clearAlerts } = alertsSlice.actions;
-export default alertsSlice.reducer;
+export const { addAlert} = alertsSlice.actions;
