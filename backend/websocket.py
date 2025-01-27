@@ -3,10 +3,10 @@ This module contains the
 WebSocket handling for real-time updates.
 """
 
-from flask_socketio import SocketIO, emit, join_room, leave_room
+from datetime import datetime, timezone
 from typing import Dict, Any
-from datetime import datetime, UTC
-import json
+
+from flask_socketio import SocketIO, emit, join_room, leave_room
 
 socketio = SocketIO(cors_allowed_origins="*")
 
@@ -46,7 +46,7 @@ def handle_subscribe(data: Dict[str, Any]):
 
         emit('subscribed', {
             'status': 'success',
-            'timestamp': datetime.now(UTC).isoformat()
+            'timestamp': datetime.now(timezone.utc).isoformat()
         })
     except Exception as e:
         emit('error', {'message': str(e)})
@@ -81,10 +81,10 @@ def handle_disconnect():
                 del connected_clients[room]
 
 
-def emit_to_organization(organization_id: str, event: str, data: Dict[str, Any]):
+def emit_to_organization(organization_id: str, event: str, data: Dict[str, Any]) -> None:
     """Emit event to all clients subscribed to an organization."""
     room = f"org_{organization_id}"
-    emit(event, data, room=room)
+    emit(event, data, room)
 
 
 def broadcast_metric_update(organization_id: str, metric_data: Dict[str, Any]):
@@ -95,7 +95,7 @@ def broadcast_metric_update(organization_id: str, metric_data: Dict[str, Any]):
         {
             'type': 'METRIC_UPDATE',
             'payload': metric_data,
-            'timestamp': datetime.now(UTC).isoformat()
+            'timestamp': datetime.now(timezone.utc).isoformat()
         }
     )
 
@@ -108,6 +108,7 @@ def broadcast_alert(organization_id: str, alert_data: Dict[str, Any]):
         {
             'type': 'ALERT',
             'payload': alert_data,
-            'timestamp': datetime.now(UTC).isoformat()
+            'timestamp': datetime.now(timezone.utc).isoformat()
         }
     )
+

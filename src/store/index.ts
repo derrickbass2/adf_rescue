@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-export type AppDispatch = typeof store["dispatch"];
-export const store = configureStore({
+const store = configureStore({
   reducer: {},
-  middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware();
-  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+export { store };

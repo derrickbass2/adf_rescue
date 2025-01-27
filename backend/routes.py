@@ -1,29 +1,56 @@
-import firebase_admin
-from flask import Blueprint, jsonify, Flask, request
-from firebase_admin import credentials, auth
+"""
+API routes for the ADF Rescue application.
+"""
+
+import os
+from typing import Dict, Tuple, Optional
+from flask import Blueprint, jsonify, request, current_app, Response
 
 api_routes = Blueprint('api_routes', __name__)
 
-@api_routes.route('/status', methods=['GET'])
+# Temporary authentication middleware
+@api_routes.before_request
+def verify_token() -> Optional[Tuple[Response, int]]:
+    """
+    Development authentication middleware.
+    """
+    if request.endpoint == 'api_routes.health_check':
+        return None
 
+    # Development mode - set a mock user
+    request.user_id = 'dev_user_123'
+    return None
 
-def home():
-    return "Welcome to the homepage"
+@api_routes.route('/health_check', methods=['GET'])
+def health_check() -> tuple[Response, int]:
+    """
+    Health check endpoint to verify API status.
+    """
+    return jsonify({"status": "healthy"}), 200
 
-cred = credentials.Certificate("/Users/dbass/Documents/GitHub/adf_rescue/backend/config/firebase-credentials.json")
-firebase_admin.initialize_app(cred)
-
-app = Flask(__name__)
-
-@app.route('/validate-token', methods=['POST'])
-def validate_token():
-    token = request.json.get('token')
+@api_routes.route('/quiz/submit', methods=['POST'])
+def submit_quiz() -> tuple[Response, int]:
+    """
+    Submit quiz results.
+    """
     try:
-        decoded_token = auth.verify_id_token(token)
-        return jsonify({"uid": decoded_token["uid"], "role": decoded_token.get("role", "user")}), 200
+        data = request.get_json()
+        if not data:
+            return jsonify({"error": "No data provided"}), 400
+
+        # Store quiz results logic here
+        return jsonify({
+            "status": "success",
+            "message": "Quiz results stored"
+        }), 201
     except Exception as e:
-        return jsonify({"error": str(e)}), 401
+        current_app.logger.error(f"Quiz submission failed: {str(e)}")
+        return jsonify({"error": "Failed to save quiz results"}), 500
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
+@api_routes.errorhandler(Exception)
+def handle_error(error: Exception) -> tuple[Response, int]:
+    """
+    Global error handler for all unhandled exceptions.
+    """
+    current_app.logger.error(f"Unhandled error: {str(error)}")
+    return jsonify({"error": "Internal server error"}), 500

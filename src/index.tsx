@@ -4,11 +4,12 @@ import { Provider } from 'react-redux';
 import { AuthProvider } from './auth/AuthProvider';
 import App from './app';
 import './index.css';
-import {store} from "./store"
+import { store } from './store';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Failed to find the root element');
+
+const root = ReactDOM.createRoot(rootElement as HTMLElement);
 
 root.render(
   <React.StrictMode>
