@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebaseConfig";
-import { dist } from 'david-ai';
-
-// Initialize modal functionality
-dist.initModal();
-
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

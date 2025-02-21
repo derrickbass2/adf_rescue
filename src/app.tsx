@@ -1,11 +1,13 @@
+// src/App.tsx
 import * as React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Login from "./auth/Login";
 import SignUpForm from "./auth/SignUpForm";
-import ProtectedRoute from "./auth/ProtectedRoute";
+import Dashboard from "./components/Dashboard";  // Import Dashboard directly
 import Home from "./components/Home";
-import './index.css';
+import "./index.css";
+
 const App: React.FC = () => {
   const dispatch = useDispatch();
 
@@ -29,7 +31,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUpForm />} />
-        <Route path="/dashboard" element={<ProtectedRoute children={undefined} />} />
+        <Route path="/dashboard" element={<Dashboard />} /> {/* Direct route to Dashboard */}
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />
       </Routes>
     </Router>

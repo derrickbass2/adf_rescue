@@ -1,3 +1,4 @@
+// /Users/dbass/Documents/GitHub/adf_rescue/vite.config.ts
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
@@ -10,6 +11,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  optimizeDeps: {
+    include: ['@mui/material', '@mui/styles', 'recharts'],
+    force: true,
+    esbuildOptions: {
+      target: 'es2020',
+    },
+  },
   server: {
     port: 3000,
     proxy: {
@@ -18,9 +26,24 @@ export default defineConfig({
         changeOrigin: true,
       },
     },
+    hmr: {
+      overlay: true,
+    },
   },
   build: {
     outDir: 'build',
     sourcemap: true,
+    commonjsOptions: {
+      include: [/node_modules/],
+      transformMixedEsModules: true,
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'mui': ['@mui/material', '@mui/styles'],
+          'recharts': ['recharts'],
+        },
+      },
+    },
   },
 })
