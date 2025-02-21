@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './healthCheckQuiz.css'; // Ensure the CSS file is properly included
-import sectionsConfig from '../sectionsConfig'; // Correct relative path
+import './index.css';
+import sectionsConfig from '/Users/dbass/Documents/GitHub/adf_rescue/src/components/sectionsConfig'; // Correct relative path
 
 interface SectionConfig {
   title: string;

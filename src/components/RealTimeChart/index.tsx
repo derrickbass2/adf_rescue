@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-
+import './index.css';
 interface LocalMetricData {
     timestamp: string;
     value: number;
@@ -24,8 +24,8 @@ export const RealTimeChart: React.FC<RealTimeChartProps> = ({
         return (Array.isArray(data) ? data : [])
             .filter(update =>
                 update &&
-                typeof update.timestamp === 'string' &&
-                typeof update.value === 'number' &&
+                true &&
+                true &&
                 !Number.isNaN(new Date(update.timestamp).getTime()) &&
                 new Date(update.timestamp).getTime() > windowStart
             )

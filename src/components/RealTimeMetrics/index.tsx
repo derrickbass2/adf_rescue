@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useAppSelector } from '../../store';
-import { useWebSocket } from '../../hooks/useWebSocket';
+import { useSelector } from 'react-redux';
+import { useWebSocket } from '@/hooks/useWebSocket';
 import { MetricCard } from '../MetricCard';
 import { RealTimeChart } from '../RealTimeChart';
-import { MetricData } from '../../types/dashboard';
-
+import { MetricData } from '@/types/dashboard';
+import './index.css';
 interface RealTimeMetricsProps {
   organizationId: string;
   metricKeys: string[];
@@ -14,7 +14,7 @@ export const RealTimeMetrics: React.FC<RealTimeMetricsProps> = ({
   organizationId,
   metricKeys,
 }) => {
-  const metrics = useAppSelector(state => state.dashboard.metrics) || {};
+  const metrics = useSelector((state: { dashboard: { metrics: any; }; }) => state.dashboard.metrics);
   const [realTimeData, setRealTimeData] = useState<MetricData[]>([]);
   const { sendMessage } = useWebSocket(organizationId);
 
@@ -52,7 +52,7 @@ export const RealTimeMetrics: React.FC<RealTimeMetricsProps> = ({
         <MetricCard
           key={key}
           title={key}
-          value={metrics[key as keyof typeof metrics]}
+          value={metrics[key as keyof typeof metrics] as string | number}
           realTimeData={realTimeData.filter(update => update.path.includes(key))} // Ensure MetricCard accepts this
         />
       ))}

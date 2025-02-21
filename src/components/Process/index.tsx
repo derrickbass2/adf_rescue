@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './process.css';
+import './index.css';
 
 const Process = () => {
   const [activeStep, setActiveStep] = useState<number | null>(null);

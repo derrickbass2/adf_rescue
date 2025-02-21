@@ -1,0 +1,34 @@
+{
+    "configurations": [
+      {
+        "type": "pwa-node",
+        "request": "launch",
+        "name": "Launch React App",
+        "program": "${workspaceFolder}/src/index.tsx",
+        "preLaunchTask": "npm: start",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": [
+          "run",
+          "dev"
+        ],
+        "cwd": "${workspaceFolder}",
+        "sourceMaps": true,
+        "resolveSourceMapLocations": [
+          "${workspaceFolder}/**",
+          "!**/node_modules/**"
+        ],
+        "outFiles": [
+          "${workspaceFolder}/build/**/*.js"
+        ],
+        "webRoot": "${workspaceFolder}/src"
+      }
+    ],
+    "inputs": [
+      {
+        "type": "promptString",
+        "id": "programPath",
+        "description": "Path to the program",
+        "default": "src/index.tsx"
+      }
+    ]
+  }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography, Button, Grid } from '@mui/material';
-
+import './index.css';
 interface Alert {
   id: number;
   title: string;

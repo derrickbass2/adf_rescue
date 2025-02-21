@@ -1,4 +1,4 @@
-import './hero.css';
+import './index.css';
 
 const Hero = () => (
   <section className="hero">

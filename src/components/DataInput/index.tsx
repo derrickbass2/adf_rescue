@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Grid, TextField, Button, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { dashboardService } from "../../services/api";
+import { dashboardService } from "@/services/api";
 
 interface DataInputFormProps {
   organizationId: string;

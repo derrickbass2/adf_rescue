@@ -5,61 +5,155 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99075580-2b07-4194-a6ff-320ddf6fab76" name="Changes" comment="Set up project structure and initialize key components&#10;&#10;This commit establishes the foundational structure for the Adaptive Data Fusion project. It includes TypeScript and Flask configurations, initial backend models and routes, React frontend components, global styling, and test setup. IntelliJ project files and other development environment configurations are also included for streamlined collaboration.">
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.node.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/adf_rescue.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/adf_rescue.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/modularLearningService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/websocket.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/websocket.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/init.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/runtime/helpers/objectWithoutProperties.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@babel/runtime/helpers/objectWithoutProperties.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/runtime/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@babel/runtime/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/brace-expansion/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/brace-expansion/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/brace-expansion/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/brace-expansion/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/brace-expansion/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/brace-expansion/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chalk/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/chalk/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chalk/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/chalk/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chalk/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/chalk/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chalk/source/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/chalk/source/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chalk/source/templates.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/chalk/source/templates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/glob-parent/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/glob-parent/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/glob-parent/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/glob-parent/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/glob/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/glob/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/glob/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/minimatch/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/minimatch/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/minimatch/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/minimatch/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/minimatch/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/minimatch/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/postcss/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/postcss/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-router-dom/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-router-dom/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-router/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-router/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-router/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-router/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/signal-exit/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/signal-exit/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/signal-exit/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/signal-exit/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/signal-exit/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/signal-exit/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/string-width/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/string-width/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/string-width/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/string-width/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/string-width/license" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/string-width/license" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/string-width/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/string-width/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/string-width/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/string-width/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/wrap-ansi/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/wrap-ansi/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/wrap-ansi/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/wrap-ansi/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/wrap-ansi/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/wrap-ansi/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cross-spawn/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cross-spawn/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cross-spawn/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cross-spawn/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/emoji-regex/es2015/RGI_Emoji.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/emoji-regex/es2015/RGI_Emoji.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/emoji-regex/es2015/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/emoji-regex/es2015/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/emoji-regex/es2015/text.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/emoji-regex/es2015/text.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expect/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expect/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expect/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fastq/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fastq/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fastq/SECURITY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fastq/bench.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fastq/example.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fastq/example.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fastq/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fastq/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fastq/queue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/foreground-child/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/foreground-child/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/foreground-child/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/hoist-non-react-statics/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/hoist-non-react-statics/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/hoist-non-react-statics/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/hoist-non-react-statics/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jest-diff/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jest-diff/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jest-diff/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-scurry/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-scurry/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-scurry/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/postcss-selector-parser/API.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/postcss-selector-parser/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/postcss-selector-parser/LICENSE-MIT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/postcss-selector-parser/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/postcss-selector-parser/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/postcss-selector-parser/postcss-selector-parser.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/profiling.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/server.browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/server.node.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/test-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-router-dom/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-router-dom/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-router-dom/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-router/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-router/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-router/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-router/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/jsx-dev-runtime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/jsx-runtime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/react.shared-subset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/resolve/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/resolve/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/resolve/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/resolve/SECURITY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/resolve/async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/resolve/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/resolve/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/resolve/readme.markdown" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/resolve/sync.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler-unstable_mock.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler-unstable_mock.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler-unstable_post_task.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler-unstable_post_task.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/umd/scheduler-unstable_mock.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/umd/scheduler-unstable_mock.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/umd/scheduler.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/umd/scheduler.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/umd/scheduler.profiling.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/source-map-js/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/source-map-js/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/source-map-js/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/source-map-js/source-map.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/source-map-js/source-map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/string-width-cjs/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/string-width-cjs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/string-width-cjs/license" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/string-width-cjs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/string-width-cjs/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/nesting/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/nesting/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/peers/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/scripts/create-plugin-list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/scripts/generate-types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/scripts/release-channel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/scripts/release-notes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/scripts/type-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/src/cli-peer-dependencies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/src/cli.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/src/corePluginList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/src/corePlugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/src/featureFlags.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/src/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/src/processTailwindFeatures.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/stubs/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/stubs/.prettierrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/stubs/config.full.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/stubs/config.simple.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/stubs/postcss.config.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/stubs/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/stubs/tailwind.config.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/stubs/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/stubs/tailwind.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/types/config.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/types/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ts-interface-checker/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ts-interface-checker/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ts-interface-checker/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/turbo-stream/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/turbo-stream/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/turbo-stream/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/which/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/which/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/which/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/which/bin/node-which" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/which/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/which/which.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DataInput/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DataInput/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RealTimeChart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RealTimeChart/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RealTimeMetrics/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RealTimeMetrics/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/slices/alertsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/alertsSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +205,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -152,6 +246,14 @@
       <recent name="$PROJECT_DIR$/app/src/components" />
     </key>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PY-243.23654.177" />
+        <option value="bundled-python-sdk-91d3a02ef49d-43b77aa2d136-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.23654.177" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -174,6 +276,10 @@
       <workItem from="1737921195407" duration="599000" />
       <workItem from="1737940927114" duration="6503000" />
       <workItem from="1737947457709" duration="114000" />
+      <workItem from="1738609983478" duration="2344000" />
+      <workItem from="1738634817146" duration="819000" />
+      <workItem from="1738665363893" duration="502000" />
+      <workItem from="1738665878410" duration="3211000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure and initialize key components&#10;&#10;This commit establishes the foundational structure for the Adaptive Data Fusion project. It includes TypeScript and Flask configurations, initial backend models and routes, React frontend components, global styling, and test setup. IntelliJ project files and other development environment configurations are also included for streamlined collaboration.">
       <option name="closed" value="true" />

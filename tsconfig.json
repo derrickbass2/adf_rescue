@@ -3,14 +3,19 @@
     // Essential compiler options
     "target": "ESNext",
     "module": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "moduleResolution": "bundler",
-    "jsx": "react-jsx",
     "allowJs": true,
     "isolatedModules": true,
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["*"]
+      "@/*": [
+        "*"
+      ]
     },
     "noImplicitAny": true,
     "noImplicitThis": true,
@@ -20,38 +25,92 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "alwaysStrict": true,
-
     // Module resolution
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-
     // Build options
     "skipLibCheck": true,
     "noEmit": true,
     "sourceMap": true,
-
     // Types
     "types": [
       "node",
       "jest",
       "react-dom",
       "tailwindcss",
-      "postcss",
       "@testing-library/jest-dom"
     ],
-
     // Additional features
     "useDefineForClassFields": true,
     "experimentalDecorators": false,
-    "pretty": true
+    "pretty": true,
+    "mapRoot": "",
+    "preserveValueImports": false,
+    "plugins": [],
+    "disableSizeLimit": false,
+    "rootDir": "./",
+    "allowArbitraryExtensions": false,
+    "noEmitOnError": false,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
+    "rootDirs": [],
+    "strictBuiltinIteratorReturn": false,
+    "noPropertyAccessFromIndexSignature": false,
+    "composite": true,
+    "removeComments": false,
+    "keyofStringsOnly": false,
+    "strict": false,
+    "preserveSymlinks": false,
+    "noEmitHelpers": false,
+    "importHelpers": false,
+    "strictBindCallApply": false,
+    "emitDeclarationOnly": false,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "suppressImplicitAnyIndexErrors": false,
+    "noImplicitOverride": false,
+    "allowUmdGlobalAccess": false,
+    "moduleDetection": "auto",
+    "emitBOM": false,
+    "noResolve": false,
+    "newLine": "lf",
+    "resolvePackageJsonExports": true,
+    "noLib": false,
+    "allowUnusedLabels": false,
+    "inlineSourceMap": false,
+    "preserveConstEnums": true,
+    "allowUnreachableCode": false,
+    "outDir": "./dist",
+    "checkJs": false,
+    "downlevelIteration": false,
+    "skipDefaultLibCheck": false,
+    "strictPropertyInitialization": false,
+    "maxNodeModuleJsDepth": 0,
+    "assumeChangesOnlyAffectDirectDependencies": false,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "verbatimModuleSyntax": false,
+    "noUncheckedSideEffectImports": false,
+    "noUncheckedIndexedAccess": false,
+    "emitDecoratorMetadata": false,
+    "traceResolution": false,
+    "stripInternal": false,
+    "incremental": true,
+    "declaration": true,
+    "diagnostics": false,
+    "useUnknownInCatchVariables": false,
+    "declarationMap": false,
+    "allowImportingTsExtensions": false,
+    "exactOptionalPropertyTypes": false,
+    "inlineSources": false,
+    "resolvePackageJsonImports": false,
+    "noCheck": false,
+    "strictFunctionTypes": false
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "vite.config.ts"
-  ],
   "exclude": [
     "node_modules",
     "dist",
@@ -60,5 +119,9 @@
     "**/*.test.tsx",
     "jest.config.ts"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

@@ -29,8 +29,8 @@ export const dashboardService = {
         await api.post(`/organizations/${organizationId}/metrics`, payload);
     },
 
-    // Stream real-time updates
-    subscribeToUpdates(organizationId: string, callback: (data: MetricData) => void) {
+// Stream real-time updates
+subscribeToUpdates(organizationId: string, callback: (data: MetricData) => void): () => void {
         const ws = new WebSocket(
             `${process.env.REACT_APP_WS_URL}/organizations/${organizationId}/metrics/stream`
         );
@@ -43,5 +43,6 @@ export const dashboardService = {
     },
    getAlerts() {
     return [];
-}
+   }
 };
+  
