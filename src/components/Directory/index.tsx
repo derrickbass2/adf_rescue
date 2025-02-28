@@ -3,8 +3,9 @@ import { Box, CircularProgress, Grid, Paper, ThemeProvider, Typography } from '@
 import { styled } from '@mui/system';
 import SuccessMetrics from '../Dashboard/SuccessMetrics';
 import { useDataFetching } from '../../hooks/useDataFetching'; // Ensure this path is correct
-import theme from '/Users/dbass/Documents/GitHub/adf_rescue/src/theme'; // Ensure that the theme file exists at this path or update the path accordingly
+import theme from '../../theme'; // Import theme using relative path
 import AlertsPanel from '../AlertsPanel';
+import './index.css';
 
 interface DashboardProps {
   organizationId: string;
@@ -29,11 +30,17 @@ export const Dashboard: React.FC<DashboardProps> = ({
   timeRange,
   filters,
 }) => {
-  const [metrics, setMetrics] = useState<any | null>(null);
+  const [metrics, setMetrics] = useState<{
+    successMetrics: any[];
+    alerts: any[];
+  } | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const { data, error: fetchError } = useDataFetching(`/api/organizations/${organizationId}/metrics`, {
+  const { data, error: fetchError } = useDataFetching<{
+    successMetrics: any[];
+    alerts: any[];
+  }>(`/api/organizations/${organizationId}/metrics`, {
     timeRange,
     filters,
   });

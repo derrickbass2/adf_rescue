@@ -1,8 +1,6 @@
-import { useState } from 'react';
+// /Users/dbass/Documents/GitHub/adf_rescue/src/components/Collectors/index.tsx
+import React, { useState } from 'react';
 import './index.css';
-
-
-
 
 interface DataCollectorProps {
   title: string;
@@ -29,16 +27,13 @@ const DataCollectorComponent = ({ title, dataPrefix }: DataCollectorProps) => {
   );
 };
 
-// Define the DataCollector interface as a contract for collectors
 interface DataCollectorInterface {
   collect(organizationId: string): Promise<any>;
 }
 
-// Correcting class names and their implementation
 export class UsageDataCollector implements DataCollectorInterface {
   collect(): Promise<void> {
     return new Promise((resolve) => {
-      // Implementation here
       resolve(undefined);
     });
   }
@@ -47,7 +42,6 @@ export class UsageDataCollector implements DataCollectorInterface {
 export class AdoptionDataCollector implements DataCollectorInterface {
   collect(): Promise<any> {
     return new Promise((resolve) => {
-      // Implementation here
       resolve(undefined);
     });
   }
@@ -56,7 +50,6 @@ export class AdoptionDataCollector implements DataCollectorInterface {
 export class ResistanceDataCollector implements DataCollectorInterface {
   collect(): Promise<any> {
     return new Promise((resolve) => {
-      // Implementation here
       resolve(undefined);
     });
   }
@@ -65,15 +58,11 @@ export class ResistanceDataCollector implements DataCollectorInterface {
 export class SuccessDataCollector implements DataCollectorInterface {
   collect(): Promise<any> {
     return new Promise((resolve) => {
-      // Implementation here
       resolve(undefined);
     });
   }
 }
 
-// Correct the exports so the classes and components are mapped correctly
-
-// Data collector components
 export const UsageDataCollectorComponent = () => (
   <DataCollectorComponent title="Usage Data Collector" dataPrefix="Usage" />
 );
@@ -90,8 +79,19 @@ export const SuccessDataCollectorComponent = () => (
   <DataCollectorComponent title="Success Data Collector" dataPrefix="Success" />
 );
 
-export function DataCollector() {
+// Main Collectors component that combines all collectors
+const Collectors: React.FC = () => {
   return (
-    <DataCollectorComponent title="Data Collector" dataPrefix="General" />
+    <div className="collectors-container">
+      <h1>Data Collectors</h1>
+      <div className="collectors-grid">
+        <UsageDataCollectorComponent />
+        <AdoptionDataCollectorComponent />
+        <ResistanceDataCollectorComponent />
+        <SuccessDataCollectorComponent />
+      </div>
+    </div>
   );
-}
+};
+
+export default Collectors;

@@ -38,7 +38,7 @@ const Dashboard: React.FC = (): JSX.Element => {
         setMetrics(Array.isArray(dashboardData) ? dashboardData : [dashboardData]);
 
         // Fetch modular learning system metrics
-        const modularData = await modularLearningService.getMetrics(organizationId);
+        const modularData = await modularLearningService.processData({}, organizationId);
         setModularMetrics({
           sparkEngine: modularData.sparkEngine.metrics,
           aaGenome: modularData.aaGenome.metrics,
@@ -87,7 +87,7 @@ const Dashboard: React.FC = (): JSX.Element => {
       const dashboardData = await dashboardService.getMetrics(organizationId, "24h", { role });
       setMetrics(Array.isArray(dashboardData) ? dashboardData : [dashboardData]);
 
-      const modularData = await modularLearningService.getMetrics(organizationId);
+      const modularData = await modularLearningService.processData({}, organizationId);
       setModularMetrics({
         sparkEngine: modularData.sparkEngine.metrics,
         aaGenome: modularData.aaGenome.metrics,

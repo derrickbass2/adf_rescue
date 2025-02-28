@@ -1,0 +1,23 @@
+/* /src/components/Home/index.css */
+
+/* Home component container */
+.home-container {
+    min-height: 100vh;
+    background-color: var(--background-default, #f4f6f8);
+    padding: 2rem;
+  }
+  
+  /* Style for headings in Home */
+  .home-container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color, #001F54);
+    margin-bottom: 1rem;
+  }
+  
+  /* Style for paragraphs in Home */
+  .home-container p {
+    font-size: 1.125rem;
+    color: var(--text-primary, #212121);
+    line-height: 1.6;
+  }

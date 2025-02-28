@@ -13,7 +13,7 @@ export interface UsageAnalytics {
 }
 
 export class UsageAnalyticsImpl implements UsageAnalytics {
-    private events: UsageEvent[] = [];
+    private readonly events: UsageEvent[] = [];
 
     logEvent(event: UsageEvent): void {
         this.events.push(event);

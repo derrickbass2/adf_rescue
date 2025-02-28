@@ -1,14 +1,11 @@
-"""
-CLI management script for ADF Rescue.
-
-This module provides command-line interface tools for managing the application,
-including database operations and development utilities.
-"""
+#!/usr/bin/env python
+import sys
+from sqlalchemy.pool import QueuePool
+pool_module = QueuePool
+sys.modules["sqlalchemy.pool"] = pool_module
 
 from typing import NoReturn
-
 from flask.cli import FlaskGroup
-
 from app import create_app, db
 
 app = create_app()
@@ -19,6 +16,7 @@ def create_db() -> NoReturn:
     """
     Create all database tables.
 
+
     This command initializes the database schema based on the defined models.
     It should be run once before starting the application for the first time.
 
@@ -27,11 +25,11 @@ def create_db() -> NoReturn:
     """
     db.create_all()
     print("Database tables created successfully!")
-
 @cli.command("drop-db")
 def drop_db() -> NoReturn:
     """
     Drop all database tables.
+
 
     This command removes all tables from the database. It should be used with
     caution as it will result in permanent data loss.
@@ -44,6 +42,5 @@ def drop_db() -> NoReturn:
         print("Database tables dropped successfully!")
     else:
         print("Operation cancelled.")
-
 if __name__ == "__main__":
     cli()

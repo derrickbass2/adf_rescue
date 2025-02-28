@@ -7,9 +7,9 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
+    alias: [
+      { find: '@', replacement: path.resolve(__dirname, './src') }
+    ],
   },
   optimizeDeps: {
     include: ['@mui/material', '@mui/styles', 'recharts'],
@@ -46,4 +46,6 @@ export default defineConfig({
       },
     },
   },
-})
+});
+
+export { };

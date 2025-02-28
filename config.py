@@ -12,7 +12,7 @@ class Config:
     # Database configuration
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL') or \
-                              'postgresql://dbass:AffluentMongoose^2@localhost/adf_rescue'
+                              'postgresql://localhost/adf_rescue'
 
     # Security configuration
     SECRET_KEY = os.getenv('SECRET_KEY') or 'your-secret-key-here'

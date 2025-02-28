@@ -1,9 +1,9 @@
 // /Users/dbass/Documents/GitHub/adf_rescue/src/types/index.tsx
 
 // Exporting all types from a single file for better module resolution
-export * from '/Users/dbass/Documents/GitHub/adf_rescue/src/services/websockets';
-export * from '/Users/dbass/Documents/GitHub/adf_rescue/src/services/dataCollection';
-export * from '/Users/dbass/Documents/GitHub/adf_rescue/src/services/integration';
+export * from '../services/websockets';
+export * from '../services/dataCollection';
+export * from '../services/integration';
 
 // websockets.ts
 export interface WebSocketMessage {

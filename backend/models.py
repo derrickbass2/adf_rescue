@@ -5,7 +5,26 @@ Database models for the ADF Rescue application.
 from datetime import datetime, UTC
 from typing import Dict, Any
 from extensions import db
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.ext.declarative import declarative_base
 
+Base = declarative_base()
+db = SQLAlchemy()
+
+class User(db.Model):
+    __tablename__ = 'users'
+    id = db.Column(db.Integer, primary_key=True)
+    # Add your user fields here
+
+class Post(db.Model):
+    __tablename__ = 'posts'
+    id = db.Column(db.Integer, primary_key=True)
+    # Add your post fields here
+
+class Comment(db.Model):
+    __tablename__ = 'comments'
+    id = db.Column(db.Integer, primary_key=True)
+    # Add your comment fields here
 
 class User(db.Model):
     """User model for storing user account information."""
