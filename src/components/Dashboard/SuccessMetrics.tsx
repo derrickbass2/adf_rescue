@@ -18,8 +18,8 @@ const SuccessMetrics: React.FC<SuccessMetricsProps> = ({ data }) => {
     <Card>
       <CardContent>
         <Typography variant="h6">Success Metrics</Typography>
-        {data.map((metric, index) => (
-          <Typography key={index} gutterBottom>
+        {data.map((metric) => (
+          <Typography key={metric.metricName} gutterBottom>
             {metric.metricName}: {metric.value} ({metric.description})
           </Typography>
         ))}

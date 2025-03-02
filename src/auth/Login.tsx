@@ -97,6 +97,7 @@ const Login: React.FC = () => {
               </div>
               <div className="inline-flex items-center mt-1">
                 <label className="flex items-center cursor-pointer relative" htmlFor="modal-sign-in">
+                  <span className="sr-only">Remember login details</span>
                   <input
                     type="checkbox"
                     checked
@@ -104,8 +105,8 @@ const Login: React.FC = () => {
                     id="modal-sign-in"
                   />
                   <span className="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <svg stroke-width="1.5" className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff">
-                      <path d="M5 13L9 17L19 7" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <svg strokeWidth="1.5" className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff">
+                      <path d="M5 13L9 17L19 7" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                     </svg>
                   </span>
                 </label>
@@ -123,10 +124,9 @@ const Login: React.FC = () => {
                 </button>
                 {error && <p className="text-red-500">{error}</p>}
                 <small className="font-sans text-sm mb-2 mt-3 flex items-center justify-center gap-1 text-stone-500">
-                  Don't have an account?{" "}
-                  <a href="#" onClick={(e) => e.preventDefault()} className="font-sans text-sm text-primary font-semibold">
+                  <button type="button" className="font-sans text-sm text-primary font-semibold">
                     Sign up
-                  </a>
+                  </button>
                 </small>
               </div>
             </form>

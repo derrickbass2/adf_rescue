@@ -3,10 +3,11 @@ import Chart from 'chart.js/auto';
 
 const RescueChart = () => {
   const chartRef = useRef<HTMLCanvasElement>(null);
+  const chartInstanceRef = useRef<Chart | null>(null);
 
   useEffect(() => {
     if (chartRef.current) {
-      new Chart(chartRef.current, {
+      chartInstanceRef.current = new Chart(chartRef.current, {
         type: 'bar',
         data: {
           labels: ['Week 1', 'Week 2', 'Week 3'],
@@ -20,10 +21,16 @@ const RescueChart = () => {
           responsive: true,
           plugins: {
             legend: { display: false },
-          },
-        },
+          }
+        }
       });
     }
+    
+    return () => {
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy();
+      }
+    };
   }, []);
 
   return <canvas ref={chartRef}></canvas>;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './index.css';
-import sectionsConfig from '/Users/dbass/Documents/GitHub/adf_rescue/src/components/sectionsConfig'; // Correct relative path
+import sectionsConfig from '../../components/sectionsConfig';
+import MetricItem from './MetricItem';
 
 interface SectionConfig {
   title: string;
@@ -68,37 +69,19 @@ const HealthCheckQuiz: React.FC = () => {
       <h2>AI Implementation Health Check</h2>
 
       {sectionsConfig.map((section: SectionConfig, sectionIndex: number) => (
-        <div key={sectionIndex} className="quiz-section">
+        <div key={`section-${section.title}`} className="quiz-section">
           <h3>{section.title}</h3>
           {section.metrics.map((metricCategory, metricIndex) => (
-            <div key={metricIndex} className="metric-category">
+            <div key={`metric-${section.title}-${metricCategory}`} className="metric-category">
               <h4>{metricCategory}</h4>
-
-              {/* Render five metrics (1-5) for each category */}
               {[...Array(5)].map((_, questionIndex) => {
-                const calculatedMetricIndex =
-                  sectionIndex * 15 + metricIndex * 5 + questionIndex; // Calculate the metric index
-
+                const calculatedMetricIndex = sectionIndex * 15 + metricIndex * 5 + questionIndex;
                 return (
-                  <div key={questionIndex} className="metric-item">
-                    <label
-                      htmlFor={`metric-${sectionIndex}-${metricIndex}-${questionIndex}`}
-                    >
-                      Metric {calculatedMetricIndex + 1} (1-5):
-                    </label>
-                    <input
-                      id={`metric-${sectionIndex}-${metricIndex}-${questionIndex}`}
-                      type="number"
-                      min="1"
-                      max="5"
-                      value={scores[calculatedMetricIndex] || ''} // Controlled input value
-                      aria-label={`Metric ${metricCategory}`}
-                      aria-describedby="error-message"
-                      onChange={(e) =>
-                        handleScoreChange(calculatedMetricIndex, parseInt(e.target.value) || 0)
-                      }
-                    />
-                  </div>
+                  <MetricItem
+                    key={`question-${section.title}-${metricCategory}-${questionIndex}`}
+                    calculatedMetricIndex={calculatedMetricIndex}
+                    score={scores[calculatedMetricIndex]}
+                    onScoreChange={handleScoreChange} />
                 );
               })}
             </div>

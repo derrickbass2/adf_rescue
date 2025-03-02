@@ -19,7 +19,7 @@ export const fetchData = async (organizationId: string): Promise<MetricData> => 
 
 export class DataCollectionService {
   private static instance: DataCollectionService;
-  private collectors: Map<string, DataCollectorClass>;
+  private readonly collectors: Map<string, DataCollectorClass>;
 
   private constructor() {
     this.collectors = new Map();

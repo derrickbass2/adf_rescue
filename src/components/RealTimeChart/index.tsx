@@ -24,8 +24,6 @@ export const RealTimeChart: React.FC<RealTimeChartProps> = ({
         return (Array.isArray(data) ? data : [])
             .filter(update =>
                 update &&
-                true &&
-                true &&
                 !Number.isNaN(new Date(update.timestamp).getTime()) &&
                 new Date(update.timestamp).getTime() > windowStart
             )

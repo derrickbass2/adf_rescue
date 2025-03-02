@@ -10,7 +10,6 @@ import { MetricData } from "@/types/dashboard";
 
 const Dashboard: React.FC = (): JSX.Element => {
   const { checklist, updateChecklist } = useProgress();
-  const [_metrics, setMetrics] = useState<MetricData[]>([]);
   const [realTimeData, setRealTimeData] = useState<MetricData[]>([]);
   interface ModularMetricsState {
     sparkEngine: MetricData[];
@@ -28,30 +27,30 @@ const Dashboard: React.FC = (): JSX.Element => {
   const [organizationId] = useState("12345"); // Example ID; replace dynamically as needed
   const [role] = useState("admin"); // Example role; replace with actual user role dynamically
 
+  const fetchMetrics = async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      // Fetch regular dashboard metrics
+      // Fetch regular dashboard metrics
+      const dashboardData = await dashboardService.getMetrics(organizationId, "24h", { role });
+      setRealTimeData(Array.isArray(dashboardData) ? dashboardData : [dashboardData]);
+      // Fetch modular learning system metrics
+      const modularData = await modularLearningService.processData({}, organizationId);
+      setModularMetrics({
+        sparkEngine: modularData.sparkEngine.metrics,
+        aaGenome: modularData.aaGenome.metrics,
+        neurotech: modularData.neurotech.metrics
+      });
+    } catch (error) {
+      console.error("Error fetching metrics:", error);
+      setError("Failed to fetch metrics. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchMetrics = async () => {
-      setIsLoading(true);
-      setError(null);
-      try {
-        // Fetch regular dashboard metrics
-        const dashboardData = await dashboardService.getMetrics(organizationId, "24h", { role });
-        setMetrics(Array.isArray(dashboardData) ? dashboardData : [dashboardData]);
-
-        // Fetch modular learning system metrics
-        const modularData = await modularLearningService.processData({}, organizationId);
-        setModularMetrics({
-          sparkEngine: modularData.sparkEngine.metrics,
-          aaGenome: modularData.aaGenome.metrics,
-          neurotech: modularData.neurotech.metrics
-        });
-      } catch (error) {
-        console.error("Error fetching metrics:", error);
-        setError("Failed to fetch metrics. Please try again later.");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
     fetchMetrics();
 
     // Subscribe to regular dashboard updates
@@ -80,25 +79,8 @@ const Dashboard: React.FC = (): JSX.Element => {
     };
   }, [organizationId, role]);
 
-  const handleRefresh = async () => {
-    setIsLoading(true);
-    setError(null);
-    try {
-      const dashboardData = await dashboardService.getMetrics(organizationId, "24h", { role });
-      setMetrics(Array.isArray(dashboardData) ? dashboardData : [dashboardData]);
-
-      const modularData = await modularLearningService.processData({}, organizationId);
-      setModularMetrics({
-        sparkEngine: modularData.sparkEngine.metrics,
-        aaGenome: modularData.aaGenome.metrics,
-        neurotech: modularData.neurotech.metrics
-      });
-    } catch (error) {
-      console.error("Error fetching metrics:", error);
-      setError("Failed to fetch metrics. Please try again later.");
-    } finally {
-      setIsLoading(false);
-    }
+  const handleRefresh = () => {
+    fetchMetrics();
   };
 
   const handleToggle = (step: string) => {
@@ -183,11 +165,10 @@ const Dashboard: React.FC = (): JSX.Element => {
               </div>
             ) : (
               modularMetrics.sparkEngine.map((metric: MetricData, index: number) => (
-                <Grid item xs={12} sm={6} md={4} key={`spark-${index}`}>
+                <Grid item xs={12} sm={6} md={4} key={`spark-${metric.path || metric.id || index}`}>
                   <MetricCard 
                     title={metric.path || 'Metric'}
                     value={metric.value}
-                    unit={metric.unit || ''} 
                   />
                 </Grid>
               ))
@@ -203,8 +184,8 @@ const Dashboard: React.FC = (): JSX.Element => {
                 No AA Genome metrics available
               </div>
             ) : (
-              modularMetrics.aaGenome.map((metric: MetricData, index: number) => (
-                <Grid item xs={12} sm={6} md={4} key={`genome-${index}`}>
+              modularMetrics.aaGenome.map((metric: MetricData) => (
+                <Grid item xs={12} sm={6} md={4} key={`genome-${metric.path || metric.id || 'metric-' + Math.random()}`}>
                   <MetricCard 
                     title={metric.path || 'Metric'}
                     value={metric.value}
@@ -224,8 +205,8 @@ const Dashboard: React.FC = (): JSX.Element => {
                 No Neurotech Network metrics available
               </div>
             ) : (
-              modularMetrics.neurotech.map((metric: MetricData, index: number) => (
-                <Grid item xs={12} sm={6} md={4} key={`neuro-${index}`}>
+              modularMetrics.neurotech.map((metric: MetricData) => (
+                <Grid item xs={12} sm={6} md={4} key={`neuro-${metric.path || metric.id || 'metric-' + Math.random()}`}>
                   <MetricCard 
                     title={metric.path || 'Metric'}
                     value={metric.value}

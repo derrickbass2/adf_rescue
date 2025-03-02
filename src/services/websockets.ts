@@ -1,4 +1,4 @@
-import {store} from '/Users/dbass/Documents/GitHub/adf_rescue/src/store';
+import {store} from '../store';
 import { updateRealTimeMetrics, updateMetricValue } from '../store/slices/dashboardSlice';
 import {WebSocketMessage} from '../types/index';
 import { addAlert } from '../store/slices/alertsSlice';
@@ -15,8 +15,8 @@ export class WebSocketService {
     private ws: WebSocket | null = null;
     private reconnectAttempts = 0;
     private organizationId: string | null = null;
-    private maxReconnectAttempts = 5;
-    private reconnectTimeout = 3000;
+    private readonly maxReconnectAttempts = 5;
+    private readonly reconnectTimeout = 3000;
 
     private constructor() {
     }
@@ -53,7 +53,6 @@ export class WebSocketService {
         if (!this.ws) return;
 
         this.ws.onopen = this.handleOpen.bind(this);
-        // this.ws.onclose = this.onClose.bind(this);
         this.ws.onclose = this.handleClose.bind(this);
         this.ws.onerror = this.handleError.bind(this);
         this.ws.onmessage = this.handleMessage.bind(this);
@@ -86,7 +85,7 @@ export class WebSocketService {
             case 'METRIC_UPDATE':
                 this.handleMetricUpdate(message.payload as MetricUpdate);
                 break;
-            case 'ALERT':
+            case 'ALERT': {
                 const metrics = message.payload.metrics.map((metric: any) => ({
                     path: metric.path,
                     value: metric.value,
@@ -94,6 +93,7 @@ export class WebSocketService {
                 store.dispatch(updateRealTimeMetrics(metrics));
                 store.dispatch(addAlert(message.payload));
                 break;
+            }
             default:
                 console.warn('Unknown message type:', message.type);
         }

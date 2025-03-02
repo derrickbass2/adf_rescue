@@ -1,7 +1,7 @@
 // /Users/dbass/Documents/GitHub/adf_rescue/src/services/api.ts
 import axios from 'axios';
 import {MetricData, UpdateMetricPayload} from '../types/dashboard';
-import.meta.env
+
 const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000',
     headers: {

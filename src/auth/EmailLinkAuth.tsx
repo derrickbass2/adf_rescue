@@ -14,14 +14,16 @@ const EmailLinkAuth: React.FC = () => {
       await sendSignInLinkToEmail(auth, email, actionCodeSettings);
       alert("Email sent! Check your inbox.");
       window.localStorage.setItem("emailForSignIn", email);
-    } catch (err: any) {
-      console.error(err.message);
+    } catch (err: unknown) {
+      const error = err as { message: string };
+      console.error(error.message);
+      alert("Failed to send email link. Please try again.");
     }
   };
 
   const completeSignIn = async () => {
     if (isSignInWithEmailLink(auth, window.location.href)) {
-      const email = window.localStorage.getItem("emailForSignIn") || prompt("Please provide your email:");
+      const email = window.localStorage.getItem("emailForSignIn") ?? prompt("Please provide your email:");
       if (email) {
         try {
           await signInWithEmailLink(auth, email, window.location.href);

@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-// import { Alert, AlertState } from '../../types';
 import { dashboardService } from '@/services/api';
 type Alert = { id: string; message: string; read: boolean; };
 type AlertState = { alerts: Alert[]; unreadCount: number; };
@@ -16,7 +15,7 @@ export const fetchAlerts = createAsyncThunk(
             const response: Alert[] = dashboardService.getAlerts();
             return response;
         } catch (error) {
-                return Promise.reject((error as any)?.message || 'Failed to fetch alerts');
+                return Promise.reject(new Error(error?.message || 'Failed to fetch alerts'));
         }
     }
 );

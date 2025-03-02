@@ -15,7 +15,6 @@ import Directory from "./components/Directory";
 import Collectors from "./components/Collectors";
 import RescueChart from "./components/RescueChart";
 import Process from "./components/Process";
-import "./index.css";
 
 const App: React.FC = () => {
   const dispatch = useDispatch();

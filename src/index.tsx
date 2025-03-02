@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { AuthProvider } from './auth/AuthProvider';
 import App from './app';
-import './index.css';
+import '../static/css/globals.css'; // Updated import path
 import { store } from './store';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import theme from './theme';

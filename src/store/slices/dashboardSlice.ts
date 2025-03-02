@@ -102,7 +102,7 @@ const dashboardSlice = createSlice({
       })
       .addCase(fetchMetricsThunk.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message || 'Failed to fetch metrics';
+        state.error = action.error.message ?? 'Failed to fetch metrics';
       });
   },
 });

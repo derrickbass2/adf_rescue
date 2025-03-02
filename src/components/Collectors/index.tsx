@@ -19,8 +19,8 @@ const DataCollectorComponent = ({ title, dataPrefix }: DataCollectorProps) => {
       <h2>{title}</h2>
       <button onClick={collectData}>Collect {title}</button>
       <ul>
-        {data.map((item, index) => (
-          <li key={index}>{item}</li>
+        {data.map((item) => (
+          <li key={`${dataPrefix}-${item}`}>{item}</li>
         ))}
       </ul>
     </div>
@@ -32,34 +32,26 @@ interface DataCollectorInterface {
 }
 
 export class UsageDataCollector implements DataCollectorInterface {
-  collect(): Promise<void> {
-    return new Promise((resolve) => {
-      resolve(undefined);
-    });
+  collect(_organizationId: string): Promise<void> {
+    return Promise.resolve();
   }
 }
 
 export class AdoptionDataCollector implements DataCollectorInterface {
-  collect(): Promise<any> {
-    return new Promise((resolve) => {
-      resolve(undefined);
-    });
+  collect(_organizationId: string): Promise<number> {
+    return Promise.resolve(0);
   }
 }
 
 export class ResistanceDataCollector implements DataCollectorInterface {
-  collect(): Promise<any> {
-    return new Promise((resolve) => {
-      resolve(undefined);
-    });
+  collect(_organizationId: string): Promise<string[]> {
+    return Promise.resolve([]);
   }
 }
 
 export class SuccessDataCollector implements DataCollectorInterface {
-  collect(): Promise<any> {
-    return new Promise((resolve) => {
-      resolve(undefined);
-    });
+  collect(_organizationId: string): Promise<boolean> {
+    return Promise.resolve(false);
   }
 }
 

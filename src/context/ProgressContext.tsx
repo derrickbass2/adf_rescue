@@ -1,5 +1,5 @@
 // src/context/ProgressContext.tsx
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, ReactNode, useMemo } from "react";
 
 interface ProgressContextType {
   checklist: { [key: string]: boolean };
@@ -19,8 +19,13 @@ export const ProgressProvider: React.FC<{ children: ReactNode }> = ({ children }
     setChecklist((prev) => ({ ...prev, [step]: completed }));
   };
 
+  const value = useMemo(
+    () => ({ checklist, updateChecklist }),
+    [checklist]
+  );
+
   return (
-    <ProgressContext.Provider value={{ checklist, updateChecklist }}>
+    <ProgressContext.Provider value={value}>
       {children}
     </ProgressContext.Provider>
   );

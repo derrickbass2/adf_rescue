@@ -11,7 +11,7 @@ export class Integration {
 }
 
 export class IntegrationService {
-    private integrations: Map<string, Integration> = new Map();
+    private readonly integrations: Map<string, Integration> = new Map();
 
     public async syncData(organizationId: string): Promise<void> {
         for (const integration of this.integrations.values()) {

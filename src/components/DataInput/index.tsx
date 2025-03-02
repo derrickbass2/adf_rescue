@@ -93,7 +93,7 @@ const DataInputForm: React.FC<DataInputFormProps> = ({ organizationId, onSubmit 
           </Grid>
           <Grid item xs={12}>
             <Button variant="contained" component="label" color="secondary">
-              Upload File
+              Upload File{" "}
               <input type="file" hidden onChange={handleFileChange} />
             </Button>
             {file && <p>Selected File: {file.name}</p>}

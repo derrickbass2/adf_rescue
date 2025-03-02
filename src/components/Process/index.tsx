@@ -15,14 +15,21 @@ const Process = () => {
       <h2>Our 3-Week Rescue Plan</h2>
       <div className="steps">
         {steps.map((step, index) => (
-          <div
-            key={index}
+          <button
+            key={step.title}
             className={`step ${activeStep === index ? 'active' : ''}`}
             onClick={() => setActiveStep(index)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                setActiveStep(index);
+              }
+            }}
+            type="button"
+            aria-expanded={activeStep === index}
           >
             <h3>{step.title}</h3>
             {activeStep === index && <p>{step.details}</p>}
-          </div>
+          </button>
         ))}
       </div>
     </section>
