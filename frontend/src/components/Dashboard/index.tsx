@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { useProgress } from "@/context/ProgressContext";
 import { MetricCard } from "../MetricCard";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "@/context/AuthContext";
 import { dashboardService } from "@/services/api";
 import { modularLearningService } from "@/services/modularLearningService";
 import { MetricData } from "@/types/dashboard";
@@ -23,7 +24,8 @@ interface ModularMetricsState {
   neurotech: MetricData[];
 }
 
-const Dashboard: React.FC = () => {
+const Dashboard: React.FC = (): JSX.Element => {
+  useProgress();
   const [realTimeData, setRealTimeData] = useState<MetricData[]>([]);
   const [modularMetrics, setModularMetrics] = useState<ModularMetricsState>({
     sparkEngine: [],
@@ -61,8 +63,8 @@ const Dashboard: React.FC = () => {
         neurotech: processMetrics(modularData.neurotech.metrics),
       });
 
-      const unsubscribeModular = modularLearningService.subscribeToUpdates(organizationId, (data: any) => {
-        setModularMetrics((prev: ModularMetricsState) => ({
+      const unsubscribeModular = modularLearningService.subscribeToUpdates(organizationId, (data) => {
+        setModularMetrics((prev) => ({
           sparkEngine: data.sparkEngine?.metrics || prev.sparkEngine,
           aaGenome: data.aaGenome?.metrics || prev.aaGenome,
           neurotech: data.neurotech?.metrics || prev.neurotech,
@@ -70,12 +72,11 @@ const Dashboard: React.FC = () => {
 
         if (data.combinedMetrics) {
           const processedMetrics = processMetrics(data.combinedMetrics);
-          setRealTimeData((prev: MetricData[]) => prev.concat(processedMetrics));
+          setRealTimeData((prev) => prev.concat(processedMetrics));
         }
       });
 
-      // Store unsubscribe function for cleanup instead of calling it immediately
-      // In a real app, you would use useEffect cleanup to call this
+      unsubscribeModular();
     } catch (error) {
       setError("Failed to fetch metrics. Please try again later.");
     } finally {
@@ -150,7 +151,7 @@ const Dashboard: React.FC = () => {
       </Grid>
 
       <Grid item xs={12}>
-          <RealTimeChart data={realTimeData.map((metric: MetricData) => ({ timestamp: metric.timestamp.toString(), value: metric.value }))} />
+        <div className="bg-white p-6 rounded-lg shadow-md">
           <RealTimeChart data={realTimeData.map((metric) => ({ timestamp: metric.timestamp.toString(), value: metric.value }))} />
         </div>
       </Grid>
