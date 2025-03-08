@@ -14,8 +14,9 @@ export const fetchAlerts = createAsyncThunk(
         try {
             const response: Alert[] = dashboardService.getAlerts();
             return response;
-        } catch (error) {
-                return Promise.reject(new Error(error?.message || 'Failed to fetch alerts'));
+        } catch (error: unknown) {
+                const errorMessage = error instanceof Error ? error.message : 'Failed to fetch alerts';
+                return Promise.reject(new Error(errorMessage));
         }
     }
 );

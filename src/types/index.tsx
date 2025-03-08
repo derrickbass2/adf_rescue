@@ -35,6 +35,7 @@ export class DataCollector {
 }
     
     export interface MetricData {
+        unit: string;
         path: string;
         value: number;
         timestamp: number;

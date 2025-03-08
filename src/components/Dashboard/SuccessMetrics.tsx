@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Typography, Box } from '@mui/material';
 
 interface SuccessMetricsProps {
   data: {
@@ -17,11 +17,15 @@ const SuccessMetrics: React.FC<SuccessMetricsProps> = ({ data }) => {
   return (
     <Card>
       <CardContent>
-        <Typography variant="h6">Success Metrics</Typography>
+        <Typography variant="h6" gutterBottom>
+          Success Metrics
+        </Typography>
         {data.map((metric) => (
-          <Typography key={metric.metricName} gutterBottom>
-            {metric.metricName}: {metric.value} ({metric.description})
-          </Typography>
+          <Box key={metric.metricName} mb={2}>
+            <Typography variant="body1" gutterBottom>
+              <strong>{metric.metricName}:</strong> {metric.value} ({metric.description})
+            </Typography>
+          </Box>
         ))}
       </CardContent>
     </Card>

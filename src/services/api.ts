@@ -1,4 +1,5 @@
 // /Users/dbass/Documents/GitHub/adf_rescue/src/services/api.ts
+/// <reference types="vite/client" />
 import axios from 'axios';
 import {MetricData, UpdateMetricPayload} from '../types/dashboard';
 

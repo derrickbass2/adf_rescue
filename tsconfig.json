@@ -1,4 +1,5 @@
 {
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "compilerOptions": {
     // Essential compiler options
     "target": "ESNext",
@@ -8,7 +9,7 @@
       "DOM.Iterable",
       "ESNext"
     ],
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowJs": true,
     "isolatedModules": true,
     "baseUrl": "./src",
@@ -17,23 +18,29 @@
         "*"
       ]
     },
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
+    
+    // Type checking
+    "strict": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-    "alwaysStrict": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    
     // Module resolution
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    
     // Build options
     "skipLibCheck": true,
     "noEmit": true,
     "sourceMap": true,
+    "composite": true,
+    "declaration": true,
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    
     // Types
     "types": [
       "node",
@@ -42,74 +49,19 @@
       "tailwindcss",
       "@testing-library/jest-dom"
     ],
-    // Additional features
-    "useDefineForClassFields": true,
-    "experimentalDecorators": false,
-    "pretty": true,
-    "mapRoot": "",
-    "preserveValueImports": false,
-    "plugins": [],
-    "disableSizeLimit": false,
-    "rootDir": "./",
-    "allowArbitraryExtensions": false,
-    "noEmitOnError": false,
     "typeRoots": [
       "./node_modules/@types"
     ],
-    "noImplicitUseStrict": false,
-    "noStrictGenericChecks": false,
-    "rootDirs": [],
-    "strictBuiltinIteratorReturn": false,
-    "noPropertyAccessFromIndexSignature": false,
-    "composite": true,
-    "removeComments": false,
-    "keyofStringsOnly": false,
-    "strict": false,
-    "preserveSymlinks": false,
-    "noEmitHelpers": false,
-    "importHelpers": false,
-    "strictBindCallApply": false,
-    "emitDeclarationOnly": false,
+    
+    // React
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "suppressImplicitAnyIndexErrors": false,
-    "noImplicitOverride": false,
-    "allowUmdGlobalAccess": false,
-    "moduleDetection": "auto",
-    "emitBOM": false,
-    "noResolve": false,
-    "newLine": "lf",
-    "resolvePackageJsonExports": true,
-    "noLib": false,
-    "allowUnusedLabels": false,
-    "inlineSourceMap": false,
+    
+    // Additional features
+    "useDefineForClassFields": true,
     "preserveConstEnums": true,
-    "allowUnreachableCode": false,
-    "outDir": "./dist",
-    "checkJs": false,
-    "downlevelIteration": false,
-    "skipDefaultLibCheck": false,
-    "strictPropertyInitialization": false,
-    "maxNodeModuleJsDepth": 0,
-    "assumeChangesOnlyAffectDirectDependencies": false,
-    "tsBuildInfoFile": ".tsbuildinfo",
-    "verbatimModuleSyntax": false,
-    "noUncheckedSideEffectImports": false,
-    "noUncheckedIndexedAccess": false,
-    "emitDecoratorMetadata": false,
-    "traceResolution": false,
-    "stripInternal": false,
-    "incremental": true,
-    "declaration": true,
-    "diagnostics": false,
-    "useUnknownInCatchVariables": false,
-    "declarationMap": false,
-    "allowImportingTsExtensions": false,
-    "exactOptionalPropertyTypes": false,
-    "inlineSources": false,
-    "resolvePackageJsonImports": false,
-    "noCheck": false,
-    "strictFunctionTypes": false
+    "rootDir": "./",
+    "outDir": "./dist"
   },
   "exclude": [
     "node_modules",
