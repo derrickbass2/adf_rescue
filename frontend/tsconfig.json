@@ -17,9 +17,8 @@
       "@/*": [
         "*"
       ]
-    },
-    
-    // Type checking
+},
+// Type checking
     "strict": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
